@@ -2,17 +2,17 @@
  * Created by yen.truong-thi-hong on 22/09/2017.
  */
 global.__base = __dirname + '/';
-var config    = require(__dirname + '/config');
+
 var express   = require('express');
 var http      = require('http');
 var path      = require('path');
 var fs        = require('fs');
 var session   = require('client-sessions');
-var bodyParser = require('skipper');
-var dbMongo    = require('./models/dbMongo');
-var ENV       = process.env.MODE_ENV || 'default';
+var bodyParser = require('body-parser');
+//var dbMongo    = require('./models/dbMongo');
+var ENV       = process.env.MODE_ENV || 'local';
 
-
+var config    = require(__dirname + '/config/' + ENV);
 
 var app = express();
 
@@ -29,15 +29,11 @@ if (app.get('env') === 'production' || app.get('env') === 'development' || app.g
 
 app.use(session(sesOPT));
 
-/*app.use(busboy({limits: {
-    fileSize: 2 * 1024 * 1024
-}}));*/
-
 app.use(express.static(path.join(__dirname, 'assets')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-// dynamically include routes in controllers folder
+/* dynamically include routes in controllers folder */
 fs.readdirSync('./controllers').forEach(function (file) {
     if(file.substr(-3) == '.js') {
         route = require('./controllers/' + file);
