@@ -43,7 +43,7 @@ module.exports = Object.freeze({
 
     /*footer*/
     footer:{
-        companyName: "Công ty cổ phần ABTel",
+        companyName: "Smart Logistic Technology Company",
         copyright  : "© Copyright",
         year       : new Date().getFullYear(),
         reserv     : "All Rights Reserved."

@@ -1,0 +1,32 @@
+extends layout.pug
+
+block TITLE
+    title #{title} - Forecast
+
+block SCRIPT
+
+block CONTENT
+    div.loginform
+        div.line.logintitle
+            h1 Login form
+        div.line
+            form(action=url_login, method='post', name='login', id='login')
+                div.line
+                    label.italic Username:
+                    input(type='text',id='username',name='username', value='',class='required')
+                    div(class='error',for='username')
+
+                div.line
+                    label.italic Password:
+                    input(type='password',id='password',name='password',value='',class='required')
+                    div(class='error',for='password')
+
+                div.line.center
+                    input(type='submit',id='submit',name='submit',value='Login')
+
+                div.line.center
+                    .error.loginmsg
+
+block JAVASCRIPT
+    script.
+        

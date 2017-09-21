@@ -5,7 +5,8 @@ $>npm install sails -g
 2. Checkout source from github.com: go to folder that you want to place code. Ex: D:\SLTCorp and run follow command in git bash:
 $>git checkout git@github.com:sltcorpvn/SLTCore.git SLTCore
 
-3. Change config in file config.js with your local.
+3. Change config in file config/local.js with your local or change in file index.js the below line:
+var ENV       = process.env.MODE_ENV || 'local';  => var ENV       = process.env.MODE_ENV || 'development';
 
 4. Run command below in Command Prompt to install all dependencies of project:
 D:\SLTCorp>npm install

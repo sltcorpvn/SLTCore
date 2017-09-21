@@ -1,0 +1,45 @@
+doctype html
+html
+    head
+        meta(charset='urf-8')
+        meta(http-equiv='Content-Type', content='text/html', charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='description', content='Smart Logistic Technology Page')
+        meta(name='author', content='Smart Logistic Technology company')
+        meta(content='width="device-width, initial-scale=1"', name='viewport')
+
+        block TITLE
+
+        script(src='/js/angular2.js', type='text/javascript')
+
+        block SCRIPT
+
+        link(rel='stylesheet', href='/styles/style.css')
+        link(rel='stylesheet', href='/styles/responsive.css')
+
+        link(rel='SHORTCUT ICON', href='/images/favicon.ico')
+
+    body
+        div(class='container')
+            div(class='header')
+                div(class='logo')
+                    a(href=url.home)
+                        img(class='site-logo', src=url.home+'images/logo.png', alt='SLT logo',)
+                    div(class='name-box')
+                        a(href=url.home)
+                            h1(class="site-name") SRPSystem
+                        span(class="site-tagline") Tìm đường | quản lý
+            
+                div(class='main-menu')
+                    block MENU
+                    
+                div(class='header-right')
+                    block SESSIONINFO
+
+            div(class='content')
+                div(class='main-content')
+                    block CONTENT
+
+            div(class='footer') © Copyright #{footer.year}. #{footer.companyName}. #{footer.reserv}
+
+        block JAVASCRIPT    
