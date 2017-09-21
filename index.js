@@ -1,7 +1,10 @@
 /**
- * Created by yen.truong-thi-hong on 22/09/2017.
+ * Created on 22/09/2017.
  */
 global.__base = __dirname + '/';
+
+var ENV       = process.env.MODE_ENV || 'local';
+var config    = require(__dirname + '/config/' + ENV);
 
 var express   = require('express');
 var http      = require('http');
@@ -9,10 +12,9 @@ var path      = require('path');
 var fs        = require('fs');
 var session   = require('client-sessions');
 var bodyParser = require('body-parser');
-//var dbMongo    = require('./models/dbMongo');
-var ENV       = process.env.MODE_ENV || 'local';
+var mongoose = require('mongoose');
+mongoose.connect(config.db.type + "://" + config.db.server + "/" + config.db.name);
 
-var config    = require(__dirname + '/config/' + ENV);
 
 var app = express();
 
@@ -23,7 +25,7 @@ var sesOPT = config.session;
 var host = config.http.host;
 var port = config.http.port;
 
-if (app.get('env') === 'production' || app.get('env') === 'development' || app.get('env') === 'staging'){
+if (ENV === 'production' || ENV === 'development' || ENV === 'staging'){
     sesOPT.cookie.secure = true;
 }
 

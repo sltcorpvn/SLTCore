@@ -27,7 +27,7 @@
         "config": "*",
         "pug": "2.0.0-beta6",
         "express": "*",
-        "client-sessions": "0.7.0",
+        "client-sessions": "*",
         "connect-redis": "*",
         "js-md5": "0.4.1",
         "sails-mongo": "*",

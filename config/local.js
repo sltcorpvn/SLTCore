@@ -1,10 +1,7 @@
 /*
-* create 22/09/2017
+* create on 22/09/2017
 */
 
-/**
- * Created by yen.truong-thi-hong on 22/09/2017.
- */
 module.exports = Object.freeze({
     /*database config */
     db: {
