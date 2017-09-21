@@ -23,21 +23,23 @@
     ],
     "keywords": ["logistic","smart","transporter"],
     "dependencies": {
-      "body-parser": "1.15.2",
-      "pug": "2.0.0-beta6",
-      "express": "4.14.0",
-      "client-sessions": "0.7.0",
-      "js-md5": "0.4.1",
-      "mongoose": "4.7.0",
-      "mongoose-sequence": "3.1.0"
+        "skipper": "*",
+        "config": "*",
+        "pug": "2.0.0-beta6",
+        "express": "4.14.0",
+        "client-sessions": "0.7.0",
+        "connect-redis": "*",
+        "js-md5": "0.4.1",
+        "sails-mongo": "*",
+        "mongoose-sequence": "3.1.0"
     },
     "scripts": {
         "debug": "node debug index.js",
         "start": "node index.js"
     },
     "engines":{
-      "node": ">=6",
-      "npm": "3.10"
+        "node": ">=6",
+        "npm": "3.10"
     },
     "main": "./index.js",
         "repository": {

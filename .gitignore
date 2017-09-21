@@ -2,9 +2,6 @@
 ###############  .gitignore   ##################
 ################################################
 
-
-config/local.js
-
 # Dependencies
 
 node_modules
@@ -25,6 +22,7 @@ npm-debug.log
 
 *~
 *#
+.git
 .DS_STORE
 .netbeans
 nbproject
