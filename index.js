@@ -24,7 +24,6 @@ i18n.configure({
     cookie: "sltlang",
     queryParameter: "",
     autoReload: true
-    //register: global
 });
 
 mongoose.connect(config.db.type + "://" + config.db.server + "/" + config.db.name);

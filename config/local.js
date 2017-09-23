@@ -40,15 +40,6 @@ module.exports = {
             ephemeral : false
         }
     },
-
-    /*footer*/
-    footer:{
-        companyName: "Smart Logistic Technology Company",
-        copyright  : "© Copyright",
-        year       : new Date().getFullYear(),
-        reserv     : "All Rights Reserved."
-    },
-
     /*title*/
     title:{
         layout     : "ABTel",

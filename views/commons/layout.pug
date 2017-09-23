@@ -24,11 +24,11 @@ html
             div(class='header')
                 div(class='logo')
                     a(href=url.home)
-                        img(class='site-logo', src=url.home+'images/logo.png', alt='SLT logo', title='Smart Logistics Technology')
+                        img(class='site-logo', src=url.home+'images/logo.png', alt='SLT logo', title='Smart Logistic Technology Company' )
                     div(class='name-box')
                         a(href=url.home)
-                            h1(class="site-name") {__('site_name')}
-                        span(class="site-tagline") {__('site_tagline')}
+                            h1(class="site-name") #{__('site_name')}
+                        span(class="site-tagline") #{__('site_tagline')}
             
                 div(class='main-menu')
                     block MENU
@@ -40,6 +40,6 @@ html
                 div(class='main-content')
                     block CONTENT
 
-            div(class='footer') __('copyright', 2017);
+            div(class='footer') #{__('copyright', new Date().getFullYear())};
 
         block JAVASCRIPT    

@@ -17,3 +17,9 @@ D:\SLTCorp>node index.js
 6. Check whether the website run or not with the url is configured in config/local.js file
 
 
+NOTE
+i18n
+app.get('/onarray/:lang', function(req, res) {
+  i18n.setLocale([req, funkyObject], req.params.lang);
+  render(req, res);
+});
