@@ -2,7 +2,7 @@
 * create 22/09/2017
 */
 
-module.exports = Object.freeze({
+module.exports = {
     /*database config */
     db: {
         type    : "mongodb",
@@ -94,96 +94,5 @@ module.exports = Object.freeze({
         dateFront    : "dd-MM-YYYY",
         dateOracle   : "YYYY-MM-dd",
         time         : "24"
-    },
-
-    /*url*/
-    url:{
-        home                : "/",
-        login               : "/login",
-        logout              : "/logout",
-
-        menu: {
-            menu            : "/menu",
-            list            : "/menu/list",
-            edit            : "/menu/edit",
-            add             : "/menu/add",
-            delete          : "/menu/delete"
-        },
-
-        lpkcommon: {
-            lpk             : "/lpkcommon",
-            list            : "/lpkcommon/list",
-            add             : "/lpkcommon/add",
-            update          : "/lpkcommon/save",
-            delete          : "/lpkcommon/delete"
-        },
-
-        user: {
-            user            : "/user",
-            profile         : "/user/profile",
-            save            : "/user/save", //save mysafe and other
-            update          : "/user/update", //edit other user
-            add             : "/user/add", //add new
-            delete          : "/user/delete", //delete
-            list            : "/user/list"
-        },
-
-        setting: {
-            setting         : "/setting",
-            add             : "/setting/add",
-            list            : "/setting/list",
-            save            : "/setting/save",
-            delete          : "/setting/delete"
-        },
-
-        item: {
-            item            : "/item",
-            list            : "/item/list"
-        },
-
-        moq: {
-            moq             : "/moq",
-            list            : "/moq/list",
-            add             : "/moq/add",
-            save            : "/moq/save",
-            delete          : "/moq/delete"
-        },
-
-        rating: {
-            rating          : "/rating",
-            list            : "/rating/list"
-        },
-
-        forecast: {
-            forecast        : "/forecast",
-            list            : "/forecast/list",
-            add             : "/forecast/add",
-            save            : "/forecast/save",
-            delete          : "/forecast/delete"
-        },
-
-        warning: {
-            warning         : "/warning",
-            list            : "/warning/list",
-            add             : "/warning/add",
-            save            : "/warning/save",
-            delete          : "/warning/delete"
-        },
-
-        role: {
-            role            : "/user/role",
-            list            : "/user/role/list",
-            mapping         : "/user/role/mapping"
-        },
-
-        group: {
-            group           : "/user/group",
-            list            : "/user/group/list",
-            add             : "/user/group/add",
-            save            : "/user/group/save",
-            delete          : "/user/group/delete"
-        },
-
-        //roleGroup
     }
-});
+};

@@ -5,6 +5,9 @@ global.__base = __dirname + '/';
 
 var ENV       = process.env.MODE_ENV || 'local';
 var config    = require(__dirname + '/config/' + ENV);
+var url       = require(__base + 'config/routers');
+config        = Object.assign(config, url);
+config        = Object.freeze(config);
 
 var express   = require('express');
 var http      = require('http');
@@ -12,7 +15,18 @@ var path      = require('path');
 var fs        = require('fs');
 var session   = require('client-sessions');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
+var mongoose  = require('mongoose');
+var i18n      = require("i18n");
+i18n.configure({
+    locales: ['vi', 'en'],
+    directory: __base + 'locales',
+    defaultLocale: "vi",
+    cookie: "sltlang",
+    queryParameter: "",
+    autoReload: true
+    //register: global
+});
+
 mongoose.connect(config.db.type + "://" + config.db.server + "/" + config.db.name);
 
 
@@ -34,6 +48,7 @@ app.use(session(sesOPT));
 app.use(express.static(path.join(__dirname, 'assets')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(i18n.init);
 
 /* dynamically include routes in controllers folder */
 fs.readdirSync('./controllers').forEach(function (file) {

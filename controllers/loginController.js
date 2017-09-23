@@ -7,7 +7,7 @@ md5 = require(__base + 'node_modules/js-md5');
 
 var loginController = function(app, config, fs) {
     /*show home page with login*/
-    app.get(config.url.home, function(req, res) {
+    app.get(config.url.front.home, function(req, res) {
         /*check sesson user login*/
         var sess = req.sltcore;
 
@@ -16,21 +16,21 @@ var loginController = function(app, config, fs) {
         }else{
             /*store current url for redirect after login*/
             sess.backURL = req.url;
-            sess.backURL = config.url.user.profile;
+            sess.backURL = config.url.front.user.profile;
             /*go to login page*/
-            res.redirect( config.url.login );
+            res.redirect( config.url.front.login );
         }
     });
 
     /*get login page*/
-    app.get(config.url.login, function(req, res){
+    app.get(config.url.front.login, function(req, res){
         var sess = req.sltcore;
-        var backURL = config.url.user.profile;
+        var backURL = config.url.front.user.profile;
         if(sess && sess.backURL)
             backURL = sess.backURL;
 
         res.render('commons/login', {
-            url_login      : config.url.login,
+            url_login      : config.url.front.login,
             title          : config.title.login,
             footer         : config.footer,
             url            : config.url
