@@ -40,45 +40,6 @@ module.exports = {
             ephemeral : false
         }
     },
-    /*title*/
-    title:{
-        layout     : "ABTel",
-        login      : "Trang đăng nhập",
-        setting    : "Trang setting",
-        profile    : "Trang profile",
-        user       : "Khai báo danh sách người dùng",
-        menu       : "Quản lý danh mục",
-        lpkcommon  : "Khai báo LPK nội bộ",
-        moq        : "Khai báo moq",
-        group      : "Khai báo nhóm",
-        role       : "Khai báo quyền",
-        e500       : "Internal server error!",
-        e404       : "Page not found!"
-    },
-
-    dialog:{
-        title_warning           : "Thông báo",
-        db_update_error         : "Lỗi trong quá trình cập nhật dữ liệu!",
-        title_delete_confirm    : "Xác nhận xóa",
-        question_delete_confirm : "Bạn có chắc là muốn xóa ,this,?",
-        title_information       : "Thông báo",
-        db_delete_error         : "Lỗi trong quá trình xóa ,this,. Vui lòng thử lại sau!",
-        db_add_error            : "Lỗi trong quá trình thêm mới dữ liệu!",
-        title_edit              : "Chỉnh sửa",
-        title_add               : "Thêm mới",
-        invalid_error           : "Nội dung không hợp lệ!",
-        db_update_success       : ",this, được cập nhật thành công!",
-        db_exist_item           : "Thông tin này đã có trong dữ liệu!",
-        db_add_success          : "Đã thêm ,this, thành công!",
-        db_delete_success       : "Đã xóa ,this, thành công!"
-    },
-
-    error:{
-        login_ldap_not_exist  : "Account does not exist in ldap server!",
-        login_ldap_admin_wrong: "Admin account or password is wrong!",
-        login_ldap_error      : "Password of Ldap account is wrong or account does not exist!",
-        create_ldap_user      : "Can not add ldap user to db!"
-    },
 
     /*format*/
     format:{
