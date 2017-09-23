@@ -178,7 +178,9 @@ ul.main-nav li ul.sub-menu li:hover a span,ul.main-nav li ul.sub-menu li.active 
 }
 .logintitle{
     background-color: #3ac7f3 ;
-    border: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
     padding: 0 20px;
     width: 280px;
 }

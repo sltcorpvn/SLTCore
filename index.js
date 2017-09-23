@@ -1,10 +1,12 @@
 /**
  * Created on 22/09/2017.
  */
+process.chdir(__dirname); ///
+
 global.__base = __dirname + '/';
 
 var ENV       = process.env.MODE_ENV || 'local';
-var config    = require(__dirname + '/config/' + ENV);
+var config    = require(__base + 'config/env/' + ENV);
 var url       = require(__base + 'config/routers');
 config        = Object.assign(config, url);
 config        = Object.freeze(config);
@@ -19,7 +21,7 @@ var mongoose  = require('mongoose');
 var i18n      = require("i18n");
 i18n.configure({
     locales: ['vi', 'en'],
-    directory: __base + 'locales',
+    directory: __base + 'config/locales',
     defaultLocale: "vi",
     cookie: "sltlang",
     queryParameter: "",
@@ -31,7 +33,7 @@ mongoose.connect(config.db.type + "://" + config.db.server + "/" + config.db.nam
 
 var app = express();
 
-app.set('views', __dirname + '/views');
+app.set('views', __base + 'views');
 app.set('view engine', 'pug');
 
 var sesOPT = config.session;
