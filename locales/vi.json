@@ -1,6 +1,11 @@
 {
-    "site_name": "SRPSystem",
-    "site_tagline": "Tìm đường & quản lý",
-    "copyright": "© Copyright %s Smart Logistic Technology Company All Rights Reserved.",
-    "company_name": "Smart Logistic Technology Company"
+	"site_name": "SRPSystem",
+	"site_tagline": "Tìm đường & quản lý",
+	"copyright": "© Copyright %s Smart Logistic Technology Company All Rights Reserved.",
+	"company_name": "Smart Logistic Technology Company",
+	"title.login": "Trang đăng nhập - Hệ thống tìm đường",
+    "login_form_title": "Login form",
+    "username": "Username:",
+    "password": "Password:",
+    "login": "Login"
 }

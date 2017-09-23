@@ -23,10 +23,11 @@ html
         div(class='container')
             div(class='header')
                 div(class='logo')
-                    a(href=url.home)
-                        img(class='site-logo', src=url.home+'images/logo.png', alt='SLT logo', title='Smart Logistic Technology Company' )
+                    a(href=urls.home)
+                        - var title = __('company_name');
+                        img(class='site-logo', src=urls.home+'images/logo.png', alt='SLT logo', title=title )
                     div(class='name-box')
-                        a(href=url.home)
+                        a(href=urls.home)
                             h1(class="site-name") #{__('site_name')}
                         span(class="site-tagline") #{__('site_tagline')}
             

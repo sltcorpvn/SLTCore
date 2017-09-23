@@ -1,28 +1,29 @@
 extends layout.pug
 
 block TITLE
-    title #{title} - Forecast
+    title #{__("title.login")}
 
 block SCRIPT
 
 block CONTENT
     div.loginform
         div.line.logintitle
-            h1 Login form
+            h1 #{__('login_form_title')}
         div.line
             form(action=url_login, method='post', name='login', id='login')
                 div.line
-                    label.italic Username:
-                    input(type='text',id='username',name='username', value='',class='required')
-                    div(class='error',for='username')
+                    label.italic #{__('username')}
+                    input(type='text', id='username', name='username', value='', class='required')
+                    div(class='error', for='username')
 
                 div.line
-                    label.italic Password:
-                    input(type='password',id='password',name='password',value='',class='required')
-                    div(class='error',for='password')
+                    label.italic #{__('password')}
+                    input(type='password', id='password', name='password', value='', class='required')
+                    div(class='error', for='password')
 
                 div.line.center
-                    input(type='submit',id='submit',name='submit',value='Login')
+                    - var login = __('login')
+                    input(type='submit', id='submit', name='submit', value=login)
 
                 div.line.center
                     .error.loginmsg

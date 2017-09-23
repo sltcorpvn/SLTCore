@@ -31,9 +31,7 @@ var loginController = function(app, config, fs) {
 
         res.render('commons/login', {
             url_login      : config.url.front.login,
-            title          : config.title.login,
-            footer         : config.footer,
-            url            : config.url
+            urls           : config.url
         });
     });
 };
