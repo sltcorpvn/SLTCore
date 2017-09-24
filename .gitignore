@@ -28,5 +28,6 @@ npm-debug.log
 nbproject
 .idea
 .node_history
-upload/*
+uploads/*
 public
+logs/*
