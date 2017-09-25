@@ -3,7 +3,7 @@
 */
 var mongoose      = require('mongoose');
 var AutoIncrement = require('mongoose-sequence');
-var utils         = require(__base + "resources/js/utils");
+//var utils         = require(__dirname + "/assets/js/utils");
 
 var Schema = mongoose.Schema;
 var users = new Schema({

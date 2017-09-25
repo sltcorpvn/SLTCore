@@ -5,4 +5,4 @@
 var mongoose = require('mongoose');
 //var config   = require('../config');
 
-mongoose.connect(config.db.type + "://" + config.db.server + "/" + config.db.name);
+//mongoose.connect(sails.config.db.type + "://" + config.db.server + "/" + config.db.name);

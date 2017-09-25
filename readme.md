@@ -16,6 +16,8 @@ D:\SLTCorp>node index.js
 
 6. Check whether the website run or not with the url is configured in config/local.js file
 
+7. Run sails project:
+$>sails lift
 
 NOTE
 i18n
