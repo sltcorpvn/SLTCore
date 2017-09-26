@@ -6,8 +6,8 @@ module.exports = {
     models: {
         connection: 'prodMongodbServer'
     },
-    port: 80,
-    environment: 'production',
+    port: process.env.PORT || 80,
+    host: "core.sltcorp.vn",
     log: {
         level: "silent"
     }

@@ -27,39 +27,13 @@ module.exports.policies = {
   ***************************************************************************/
 
     '*': true,
-
-  /***************************************************************************
-  *                                                                          *
-  * Here's an example of mapping some policies to run before a controller    *
-  * and its actions                                                          *
-  *                                                                          *
-  ***************************************************************************/
-	  /*RabbitController: {
-
-		Apply the `false` policy as the default for all of RabbitController's actions
-		(`false` prevents all access, which ensures that nothing bad happens to our rabbits)
-		'*': false,
-
-		For the action `nurture`, apply the 'isRabbitMother' policy
-		(this overrides `false` above)
-		nurture	: 'isRabbitMother',
-
-		Apply the `isNiceToAnimals` AND `hasRabbitFood` policies
-		before letting any users feed our rabbits
-		feed : ['isNiceToAnimals', 'hasRabbitFood']
+    userController: {
+        //'*': 'isLoggedIn',
+        login: true,
+        //destroy: 'isAdmin'
     },
-    UserController: {
-    
-      // We might mandate that requests come from a logged-in user for
-      // most actions in this controller.
-      '*': 'isLoggedIn',
-    
-      // But we'll let anyone access the 'login' and 'signup' actions
-      login: true,
-      signup: true,
-    
-      // And we'll only let admins delete users.
-      destroy: 'isAdmin',
-    
-    },*/
+    fileController: {
+        //upload: ['isAuthenticated', 'canWrite', 'hasEnoughSpace']
+    }
+  
 };

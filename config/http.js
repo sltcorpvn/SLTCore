@@ -18,8 +18,7 @@ module.exports.http = {
             'startRequestTimer',
             'cookieParser',
             'session',
-            'myRequestLogger',
-            'responseTimeLogger',
+            'logger',
             'bodyParser',
             'handleBodyParserError',
             'compress',
@@ -38,9 +37,9 @@ module.exports.http = {
             next();
         },
 
-        responseTimeLogger: function (req, res, next){
+        logger: function (req, res, next){
             req.on("end", function() {
-                sails.log.info('response time: ' + new Date() - req._startTime + 'ms');
+                sails.log.silly('response time: ' + new Date() - req._startTime + 'ms');
             });
             next();
         },
@@ -51,7 +50,7 @@ module.exports.http = {
         },
 
         session: function(req, res, next){
-            //
+            next();
         },
     
         /****************************************************************************
@@ -87,10 +86,14 @@ module.exports.http = {
             maxWaitTimeBeforePassingControlToApp: 1000
         }),
 
-        handleBodyParserError: function(req, res, next){},
+        handleBodyParserError: function(req, res, next){
+            next();
+        },
 
         compress: require('compression')(),
-        methodOverride: function(req, res, next){},
+        methodOverride: function(req, res, next){
+            next();
+        },
         poweredBy: function(req, res, next) {
             res.setHeader('X-Powered-By', "Smart Logistics Technology");
             next();

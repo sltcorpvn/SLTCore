@@ -23,11 +23,11 @@ html
         div(class='container')
             div(class='header')
                 div(class='logo')
-                    a(href=urls.home)
+                    a(href=sails.config.sltconfig.url.front.home)
                         - var title = __('company_name');
-                        img(class='site-logo', src=urls.home+'images/logo.png', alt='SLT logo', title=title )
+                        img(class='site-logo', src=sails.config.sltconfig.url.front.home+'images/logo.png', alt='SLT logo', title=title )
                     div(class='name-box')
-                        a(href=urls.home)
+                        a(href=sails.config.sltconfig.url.front.home)
                             h1(class="site-name") #{__('site_name')}
                         span(class="site-tagline") #{__('site_tagline')}
             

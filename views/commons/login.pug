@@ -10,7 +10,7 @@ block CONTENT
         div.line.logintitle
             h1 #{__('login_form_title')}
         div.line
-            form(action=url_login, method='post', name='login', id='login')
+            form(action=sails.config.sltconfig.url.front.login, method='post', name='login', id='login')
                 div.line
                     label.italic #{__('username')}
                     input(type='text', id='username', name='username', value='', class='required')
@@ -36,7 +36,7 @@ block JAVASCRIPT
                 evt.preventDefault();
                 if (loginValidate()) {
                     jQuery.ajax({
-                        url: '#{url_login}',
+                        url: sails.config.sltconfig.url.front.login,
                         type: 'POST',
                         dataType: "json",
                         data: {username: $("#username").val(), password: $("#password").val()},
