@@ -48,7 +48,7 @@
 *                                                                           *
 ****************************************************************************/
 
-module.exports.csrf = true;
+module.exports.csrf = false;
 
 /****************************************************************************
 *                                                                           *
@@ -59,6 +59,6 @@ module.exports.csrf = true;
 ****************************************************************************/
 
 module.exports.csrf = {
-    grantTokenViaAjax: true,
-    origin: 'localhost, core.sltcorp.vn'
+    ///grantTokenViaAjax: true,
+    ///origin: 'localhost, core.sltcorp.vn'
 }

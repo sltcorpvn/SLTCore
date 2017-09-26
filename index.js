@@ -1,8 +1,10 @@
 /**
  * Created on 22/09/2017.
  */
-process.chdir(__dirname); ///
+process.chdir(__dirname); 
+
 /* Attempt to import `sails`. */
+
 var sails;
 try {
   sails = require('sails');

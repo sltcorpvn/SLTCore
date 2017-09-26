@@ -12,45 +12,45 @@ module.exports = function(sails) {
     this.abc = 123;
     */
     
-    return {
+    //return {
     
         /* Pause sails lifting until this hook has completed initializing
         ready: false,
         */
     
         /* set up the options of your hook */
-        defaults:{
-        },
+        // defaults:{
+        // },
     
         /* do stuff before intialize the hook */
-        configure: function(done){
-            return done();
-        },
+        // configure: function(done){
+        //     return done;
+        // },
     
         /* the logic of your hook */
-        initialize: function(done){
+        //initialize: function(done){
             /* This will be available in app code as sails.hooks.noneurl.numRequestsSeen*/
-            this.numRequestsSeen = 0;
+            //this.numRequestsSeen = 0;
             /* This will be available in app code as sails.hooks.myhook.numUnhandledRequestsSeen*/
-            this.numUnhandledRequestsSeen = 0;
-            return done();
-        },
+            //this.numUnhandledRequestsSeen = 0;
+            //return done;
+        //},
     
-        routes: {
-            before: {
+        //routes: {
+            //before: {
                 /* This route will be matched before any routes in config/routes.js */
-                'GET /*': function (req, res, next) {
-                    this.numRequestsSeen ++;
-                    return next();
-                }
-            },
-            after: {
+                //'GET /*': function (req, res, next) {
+                //    this.numRequestsSeen ++;
+                //    return next();
+                //}
+            //},
+            //after: {
                 /* This route will be matched after any routes in config/routes.js */
-                'GET /*': function (req, res, next) {
-                    this.numUnhandledRequestsSeen ++;
-                    return next();
-                }
-            }
-        }
-    };
+                //'GET /*': function (req, res, next) {
+                //    this.numUnhandledRequestsSeen ++;
+                //    return next();
+                //}
+            //}
+        //}
+    //};
 };

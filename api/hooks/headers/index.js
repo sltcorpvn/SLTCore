@@ -3,7 +3,7 @@
  * @param Object sails app
  */
 module.exports = function (sails) {
-    return {
+    /*return {
         initialize: function (next) {
             sails.emit('hook:headers:loaded');
             return next();
@@ -17,5 +17,5 @@ module.exports = function (sails) {
                 }
             }
         }
-    };
+    };*/
 };

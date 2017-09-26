@@ -1,7 +1,7 @@
 /*
 * Create on 23/09/2017
 */
-var mongoose      = require('mongoose');
+/*var mongoose      = require('mongoose');
 var AutoIncrement = require('mongoose-sequence');
 //var utils         = require(__dirname + "/assets/js/utils");
 
@@ -31,3 +31,4 @@ var users = new Schema({
 
 users.plugin(AutoIncrement,{ inc_field: '_id', disable_hooks: false});
 mongoose.model('users', users);
+*/

@@ -4,9 +4,9 @@
 
 module.exports = {
     
-    models: {
-        connection: 'localMongodbServer'
-    },
+    // models: {
+    //     connection: 'localMongodbServer'
+    // },
     /***************************************************************************
      * The `port` setting determines which TCP port your app will be           *
      * deployed on.                                                            *
@@ -22,7 +22,8 @@ module.exports = {
      * In env/production.js, you'll probably want to change this setting       *
      * to 80 (http://) or 443 (https://) if you have an SSL certificate        *
      ***************************************************************************/
-    port: process.env.PORT || 80,
+    port: process.env.PORT || 88,
+    host: 'core.sltcorp.lc',
 
     /***************************************************************************
      * The runtime "environment" of your Sails app is either typically         *
