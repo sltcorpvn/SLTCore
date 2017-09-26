@@ -40,7 +40,9 @@
         "rc": "1.0.1",
         "sails": "~0.12.13",
         "sails-disk": "~0.10.9",
-        "js-md5": "0.4.1"
+        "js-md5": "0.4.1",
+        "async": "*",
+        "lodash": "*"
     },
     "scripts": {
         "debug": "node debug index.js",

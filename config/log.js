@@ -13,15 +13,17 @@ var winston = require('winston');
 var customLogger = new winston.Logger();
 /* A console transport logging debug and above.*/
 customLogger.add(winston.transports.Console, {
-  level: 'debug',
-  colorize: true
+    level: 'debug',
+    colorize: true
+    //filename: 'logs/debug.log',
+    //json: true
 });
 
 /* A file based transport logging only errors formatted as json.*/
 customLogger.add(winston.transports.File, {
-  level: 'error',
-  filename: '../logs/filename.log',
-  json: true
+    level: 'error',
+    filename: 'logs/error.log',
+    json: true
 });
 
 module.exports.log = {

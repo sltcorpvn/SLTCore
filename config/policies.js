@@ -26,14 +26,5 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-    '*': true,
-    userController: {
-        //'*': 'isLoggedIn',
-        login: true,
-        //destroy: 'isAdmin'
-    },
-    fileController: {
-        //upload: ['isAuthenticated', 'canWrite', 'hasEnoughSpace']
-    }
-  
+    '*': true
 };

@@ -41,7 +41,7 @@ module.exports = function(grunt) {
             files: {
                 'public/**/*.html': require('../pipeline').jsFilesToInject,
                 'views/**/*.html': require('../pipeline').jsFilesToInject,
-                'views/**/*.pug': require('../pipeline').jsFilesToInject
+                'views/**/*.ejs': require('../pipeline').jsFilesToInject
             }
         },
         localJsRelative: {
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
             files: {
                 'public/**/*.html': require('../pipeline').jsFilesToInject,
                 'views/**/*.html': require('../pipeline').jsFilesToInject,
-                'views/**/*.pug': require('../pipeline').jsFilesToInject
+                'views/**/*.ejs': require('../pipeline').jsFilesToInject
             }
         },
         localStyles: {
@@ -68,7 +68,7 @@ module.exports = function(grunt) {
             files: {
                 'public/**/*.html': require('../pipeline').cssFilesToInject,
                 'views/**/*.html': require('../pipeline').cssFilesToInject,
-                'views/**/*.pug': require('../pipeline').cssFilesToInject
+                'views/**/*.ejs': require('../pipeline').cssFilesToInject
             }
         },
         localStylesRelative: {
@@ -82,7 +82,7 @@ module.exports = function(grunt) {
             files: {
                 'public/**/*.html': require('../pipeline').cssFilesToInject,
                 'views/**/*.html': require('../pipeline').cssFilesToInject,
-                'views/**/*.pug': require('../pipeline').cssFilesToInject
+                'views/**/*.ejs': require('../pipeline').cssFilesToInject
             }
         },
         /* Bring in JST template object */
@@ -96,7 +96,7 @@ module.exports = function(grunt) {
             files: {
                 'public/index.html': ['public/jst.js'],
                 'views/**/*.html': ['public/jst.js'],
-                'views/**/*.pug': ['public/jst.js']
+                'views/**/*.ejs': ['public/jst.js']
             }
         },
         localJsPug: {
