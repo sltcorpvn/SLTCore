@@ -13,12 +13,4 @@ module.exports = {
         res.render('commons/login');
     }
 };
-//var users      = require(__base + "models/user");
-/*var utils      = require(__base + "resources/js/utils");*/
-//md5 = require(__dirname + '/node_modules/js-md5');
-/*
-var loginController = function(app, config, fs) {
-};
 
-module.exports.controller = loginController;
-*/

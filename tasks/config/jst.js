@@ -24,16 +24,18 @@ module.exports = function(grunt) {
     grunt.config.set('jst', {
         dev: {
 
-            /*To use other sorts of templates, specify a regexp like the example below:
-            options: {
-              templateSettings: {
-                interpolate: /\{\{(.+?)\}\}/g
-              }
-            },
-            */
-
             files: {
                 'public/jst.js': require('../pipeline').templateFilesToInject
+            }
+        },
+        compile: {
+            options: {
+                templateSettings: {
+                    interpolate: /\{\{(.+?)\}\}/g
+                }
+            },
+            files: {
+                'public/templates.js': require('../pipeline').templateFilesToInject
             }
         }
     });

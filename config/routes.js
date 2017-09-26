@@ -22,7 +22,7 @@
 
 module.exports.routes = {
 
-    'GET /': {view: "commons/login"},
+    'GET /': '/login',
     'GET /login': 'LoginController.showLogin'
 
 };
