@@ -14,27 +14,27 @@ module.exports.http = {
         *                                                                          *
         ***************************************************************************/
     
-        order: [
-            'startRequestTimer',
-            'cookieParser',
-            'session',
-            'logger',
-            'bodyParser',
-            'handleBodyParserError',
-            'compress',
-            'methodOverride',
-            'poweredBy',
+        ///order: [
+            ///'startRequestTimer',
+            ///'cookieParser',
+            ///'session',
+            ///'logger',
+            ///'bodyParser',
+           /// 'handleBodyParserError',
+            ///'compress',
+            ///'methodOverride',
+            ///'poweredBy',
         //    '$custom',
         //    'router',
         //   'www',
-        //    'favicon',
-            '404',
-            '500'
-        ],
+          ///  'favicon',
+          ///  '404',
+          ///  '500'
+        ///],
 
         startRequestTimer: function (req, res, next){
             req._startTime = new Date();
-            next();
+            return next();
         },
 
         logger: function (req, res, next){

@@ -2,6 +2,7 @@
 * create on 23/09/2017
 */
 module.exports.sltconfig = {
+    _base: __dirname + '/',
     url: {
         front: {
             home                : "/",

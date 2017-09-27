@@ -171,17 +171,4 @@ module.exports.blueprints = {
    */
     jsonp: false,
 
-     /**
-   * `expectIntegerId`
-   *
-   * If enabled, built-in CRUD methods will only accept valid integers as an :id parameter.
-   *
-   * i.e. trigger built-in API if requests look like:
-   *    `GET /user/8`
-   * but not like:
-   *    `GET /user/a8j4g9jsd9ga4ghjasdha`
-   *
-   * Defaults to false.
-   */
-  expectIntegerId: false
 };

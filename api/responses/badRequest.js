@@ -27,7 +27,7 @@ module.exports = function badRequest(data, options) {
 
   // Log error to console
   if (data !== undefined) {
-    sails.log.verbose('Sending 400 ("Bad Request") response: \n',data);
+      sails.log.verbose('Sending 400 ("Bad Request") response: \n',data);
   }
   else sails.log.verbose('Sending 400 ("Bad Request") response');
 
@@ -35,13 +35,13 @@ module.exports = function badRequest(data, options) {
   // is not set to 'production'.  In production, we shouldn't
   // send back any identifying information about errors.
   if (sails.config.environment === 'production' && sails.config.keepResponseErrors !== true) {
-    data = undefined;
+      data = undefined;
   }
 
   // If the user-agent wants JSON, always respond with JSON
   // If views are disabled, revert to json
   if (req.wantsJSON || sails.config.hooks.views === false) {
-    return res.jsonx(data);
+      return res.jsonx(data);
   }
 
   // If second argument is a string, we take that to mean it refers to a view.
@@ -51,12 +51,12 @@ module.exports = function badRequest(data, options) {
   // Attempt to prettify data for views, if it's a non-error object
   var viewData = data;
   if (!(viewData instanceof Error) && 'object' == typeof viewData) {
-    try {
-      viewData = require('util').inspect(data, {depth: null});
-    }
-    catch(e) {
-      viewData = undefined;
-    }
+      try {
+          viewData = require('util').inspect(data, {depth: null});
+      }
+      catch(e) {
+          viewData = undefined;
+      }
   }
 
   // If a view was provided in options, serve it.

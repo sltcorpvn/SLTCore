@@ -15,8 +15,8 @@ var customLogger = new winston.Logger();
 customLogger.add(winston.transports.Console, {
     level: 'debug',
     colorize: true
-    //filename: 'logs/debug.log',
-    //json: true
+    /*filename: 'logs/debug.log',
+    json: true*/
 });
 
 /* A file based transport logging only errors formatted as json.*/
