@@ -13,7 +13,8 @@
 
 /* CSS files to inject in order */
 var cssFilesToInject = [
-  'styles/**/*.css'
+  'styles/**/*.css',
+  'styles/*.css'
 ];
 
 /* Client-side javascript files to inject in order */
@@ -26,7 +27,8 @@ var jsFilesToInject = [
   'js/dependencies/**/*.js',
 
   /* All of the rest of your client-side js files */
-  'js/**/*.js'
+  'js/**/*.js',
+  'js/*.js'
 ];
 
 /* Client-side HTML templates are injected using the sources below

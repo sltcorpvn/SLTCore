@@ -22,7 +22,7 @@
 
 module.exports.routes = {
 
-    '/': '/login',
-    'GET /login': 'LoginController.showLogin'
-
+    '/'           : '/login',
+    'GET /login'  : 'LoginController.showLogin',
+    'POST /login' : 'LoginController.login'
 };

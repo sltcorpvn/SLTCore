@@ -124,8 +124,8 @@ module.exports = function(grunt) {
         },
         localStylesPug: {
             options: {
-                startTag: '// STYLES',
-                endTag: '// STYLES END',
+                startTag: '// GLOBAL STYLES',
+                endTag: '// GLOBAL STYLES END',
                 fileTmpl: 'link(rel="stylesheet", href="%s")',
                 appRoot: 'public'
             },
@@ -135,8 +135,8 @@ module.exports = function(grunt) {
         },
         localStylesRelativePug: {
             options: {
-                startTag: '// STYLES',
-                endTag: '// STYLES END',
+                startTag: '// GLOBAL STYLES',
+                endTag: '// GLOBAL STYLES END',
                 fileTmpl: 'link(rel="stylesheet", href="%s")',
                 appRoot: 'public',
                 relative: true

@@ -7,17 +7,18 @@ html
         meta(name='description', content='Smart Logistic Technology Page')
         meta(name='author', content='Smart Logistic Technology company')
         meta(content='width="device-width, initial-scale=1"', name='viewport')
+        meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1")
 
         block TITLE
 
-        script(src= sails.config.sltconfig.__base + '../../styles/js/jquery/jquery-3.2.1.min.js', type='text/javascript')
-
         block SCRIPT
 
-        link(rel='stylesheet', href= __dirname + '../../styles/style.css')
-        link(rel='stylesheet', href=__dirname + '../../styles/responsive.css')
+        // GLOBAL STYLES
+        link(rel="stylesheet", href="/styles/responsive.css")
+        link(rel="stylesheet", href="/styles/style.css")
+        // GLOBAL STYLES END
 
-        link(rel='SHORTCUT ICON', href=_dirname +'../../favicon.ico')
+        link(rel='SHORTCUT ICON', href='favicon.ico')
 
     body
         div(class='container')
@@ -42,5 +43,11 @@ html
                     block CONTENT
 
             div(class='footer') #{__('copyright', new Date().getFullYear())}
+
+        // SCRIPTS
+        script(src="/js/dependencies/sails.io.js")
+        script(src="/js/jquery/jquery-3.2.1.min.js")
+        script(src="/js/utils.js")
+        // SCRIPTS END
 
         block JAVASCRIPT    

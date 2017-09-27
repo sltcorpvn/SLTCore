@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
     grunt.registerTask('compileLocalAssets', [
-        'clean:dev',
+        //'clean:dev',
         'jst:dev',
         'less:dev',
         'copy:dev',

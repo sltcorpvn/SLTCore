@@ -1,6 +1,28 @@
 /*
 * Create on 23/09/2017
+* User model
 */
+module.exports = {
+    attributes: {
+        id: Number,
+        username: {type: String, index: true, unique: true},
+        password: {type: String, default: null},
+        first_name: String,
+        last_name: String,
+        code: {type: String, index: true},
+        dob: {type: Date, default: Date.now}, //mm/dd/yyyy
+        email: String,
+        phone: String,
+        skype: String,
+        last_login: {type: Date, default: Date.now},
+        is_ldap: Number,
+        valid_to: {type: Date, default: null},
+        created_date: {type: Date, default: null},
+        created_user: Number,
+        updated_date: {type: Date, default: null},
+        updated_user: Number
+    }
+};
 /*var mongoose      = require('mongoose');
 var AutoIncrement = require('mongoose-sequence');
 //var utils         = require(__dirname + "/assets/js/utils");
