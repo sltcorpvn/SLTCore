@@ -2,7 +2,7 @@
 * Create on 23/09/2017
 * User model
 */
-module.exports = {
+/*module.exports = {
     attributes: {
         id: Number,
         username: {type: String, index: true, unique: true},
@@ -22,7 +22,7 @@ module.exports = {
         updated_date: {type: Date, default: null},
         updated_user: Number
     }
-};
+};*/
 /*var mongoose      = require('mongoose');
 var AutoIncrement = require('mongoose-sequence');
 //var utils         = require(__dirname + "/assets/js/utils");
