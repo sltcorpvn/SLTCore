@@ -31,17 +31,17 @@ module.exports = function(grunt) {
 
     grunt.config.set('sails-linker', {
         /** for local */
-        localJs: {
+        localCommonsJs: {
             options: {
-                startTag: '<!--SCRIPTS-->',
-                endTag: '<!--SCRIPTS END-->',
+                startTag: '<!--SCRIPTS COMMONS-->',
+                endTag: '<!--SCRIPTS COMMONS END-->',
                 fileTmpl: '<script src="%s"></script>',
                 appRoot: 'public'
             },
             files: {
-                'public/**/*.html': require('../pipeline').jsFilesToInject,
-                'views/**/*.html': require('../pipeline').jsFilesToInject,
-                'views/**/*.ejs': require('../pipeline').jsFilesToInject
+                'public/**/*.html': require('../pipeline').jsCommonFiles,
+                'views/**/*.html': require('../pipeline').jsCommonFiles,
+                'views/**/*.ejs': require('../pipeline').jsCommonFiles
             }
         },
         localJsRelative: {
@@ -58,17 +58,18 @@ module.exports = function(grunt) {
                 'views/**/*.ejs': require('../pipeline').jsFilesToInject
             }
         },
-        localStyles: {
+        localCommonsStyles: {
             options: {
-                startTag: '<!--STYLES-->',
-                endTag: '<!--STYLES END-->',
+                startTag: '<!--STYLES COMMONS-->',
+                endTag: '<!--STYLES COMMONS END-->',
                 fileTmpl: '<link rel="stylesheet" href="%s">',
                 appRoot: 'public'
             },
             files: {
-                'public/**/*.html': require('../pipeline').cssFilesToInject,
-                'views/**/*.html': require('../pipeline').cssFilesToInject,
-                'views/**/*.ejs': require('../pipeline').cssFilesToInject
+                'public/**/*.html': require('../pipeline').cssCommonFiles,
+                'views/**/*.html': require('../pipeline').cssCommonFiles,
+                'views/**/*.ejs': require('../pipeline').cssCommonFiles
+                //,'view/commons/login.ejs': require('../pipeline').cssLoginFiles
             }
         },
         localStylesRelative: {
@@ -99,77 +100,19 @@ module.exports = function(grunt) {
                 'views/**/*.ejs': ['public/jst.js']
             }
         },
-        localJsPug: {
-            options: {
-                startTag: '// SCRIPTS',
-                endTag: '// SCRIPTS END',
-                fileTmpl: 'script(src="%s")',
-                appRoot: 'public'
-            },
-            files: {
-                'views/**/*.pug': require('../pipeline').jsFilesToInject
-            }
-        },
-        localJsRelativePug: {
-            options: {
-                startTag: '// SCRIPTS',
-                endTag: '// SCRIPTS END',
-                fileTmpl: 'script(src="%s")',
-                appRoot: 'public',
-                relative: true
-            },
-            files: {
-                'views/**/*.pug': require('../pipeline').jsFilesToInject
-            }
-        },
-        localStylesPug: {
-            options: {
-                startTag: '// GLOBAL STYLES',
-                endTag: '// GLOBAL STYLES END',
-                fileTmpl: 'link(rel="stylesheet", href="%s")',
-                appRoot: 'public'
-            },
-            files: {
-                'views/**/*.pug': require('../pipeline').cssFilesToInject
-            }
-        },
-        localStylesRelativePug: {
-            options: {
-                startTag: '// GLOBAL STYLES',
-                endTag: '// GLOBAL STYLES END',
-                fileTmpl: 'link(rel="stylesheet", href="%s")',
-                appRoot: 'public',
-                relative: true
-            },
-            files: {
-                'views/**/*.pug': require('../pipeline').cssFilesToInject
-            }
-        },
-        /* Bring in JST template object */
-        localTplPug: {
-            options: {
-                startTag: '// TEMPLATES',
-                endTag: '// TEMPLATES END',
-                fileTmpl: 'script(type="text/javascript", src="%s")',
-                appRoot: 'public'
-            },
-            files: {
-                'views/**/*.pug': ['public/jst.js']
-            }
-        },
-        
+
         /** for development */
-        devJs: {
+        devCommonsJs: {
             options: {
-                startTag: '<!--SCRIPTS-->',
-                endTag: '<!--SCRIPTS END-->',
+                startTag: '<!--SCRIPTS COMMONS-->',
+                endTag: '<!--SCRIPTS COMMONS END-->',
                 fileTmpl: '<script src="%s"></script>',
                 appRoot: 'public'
             },
             files: {
-                'public/**/*.html': require('../pipeline').jsFilesToInject,
-                'views/**/*.html': require('../pipeline').jsFilesToInject,
-                'views/**/*.pug': require('../pipeline').jsFilesToInject
+                'public/**/*.html': require('../pipeline').jsCommonFiles,
+                'views/**/*.html': require('../pipeline').jsCommonFiles,
+                'views/**/*.ejs': require('../pipeline').jsCommonFiles
             }
         },
         devJsRelative: {
@@ -183,21 +126,21 @@ module.exports = function(grunt) {
             files: {
                 'public/**/*.html': require('../pipeline').jsFilesToInject,
                 'views/**/*.html': require('../pipeline').jsFilesToInject,
-                'views/**/*.pug': require('../pipeline').jsFilesToInject
+                'views/**/*.ejs': require('../pipeline').jsFilesToInject
             }
         },
-        devStyles: {
+        devCommonsStyles: {
             options: {
-                startTag: '<!--STYLES-->',
-                endTag: '<!--STYLES END-->',
+                startTag: '<!--STYLES COMMONS-->',
+                endTag: '<!--STYLES COMMONS END-->',
                 fileTmpl: '<link rel="stylesheet" href="%s">',
                 appRoot: 'public'
             },
 
             files: {
-                'public/**/*.html': require('../pipeline').cssFilesToInject,
-                'views/**/*.html': require('../pipeline').cssFilesToInject,
-                'views/**/*.pug': require('../pipeline').cssFilesToInject
+                'public/**/*.html': require('../pipeline').cssCommonFiles,
+                'views/**/*.html': require('../pipeline').cssCommonFiles,
+                'views/**/*.ejs': require('../pipeline').cssCommonFiles
             }
         },
         devStylesRelative: {
@@ -212,7 +155,7 @@ module.exports = function(grunt) {
             files: {
                 'public/**/*.html': require('../pipeline').cssFilesToInject,
                 'views/**/*.html': require('../pipeline').cssFilesToInject,
-                'views/**/*.pug': require('../pipeline').cssFilesToInject
+                'views/**/*.ejs': require('../pipeline').cssFilesToInject
             }
         },
         /* Bring in JST template object */
@@ -226,70 +169,10 @@ module.exports = function(grunt) {
             files: {
                 'public/index.html': ['public/jst.js'],
                 'views/**/*.html': ['public/jst.js'],
-                'views/**/*.pug': ['public/jst.js']
+                'views/**/*.ejs': ['public/jst.js']
             }
         },
-        devJsPug: {
-            options: {
-              startTag: '// SCRIPTS',
-              endTag: '// SCRIPTS END',
-              fileTmpl: 'script(src="%s")',
-              appRoot: 'public'
-            },
-            files: {
-              'views/**/*.pug': require('../pipeline').jsFilesToInject
-            }
-        },
-        devJsRelativePug: {
-            options: {
-                startTag: '// SCRIPTS',
-                endTag: '// SCRIPTS END',
-                fileTmpl: 'script(src="%s")',
-                appRoot: 'public',
-                relative: true
-            },
-            files: {
-                'views/**/*.pug': require('../pipeline').jsFilesToInject
-            }
-        },
-        devStylesPug: {
-            options: {
-                startTag: '// STYLES',
-                endTag: '// STYLES END',
-                fileTmpl: 'link(rel="stylesheet", href="%s")',
-                appRoot: 'public'
-            },
-
-            files: {
-                'views/**/*.pug': require('../pipeline').cssFilesToInject
-            }
-        },
-        devStylesRelativePug: {
-            options: {
-                startTag: '// STYLES',
-                endTag: '// STYLES END',
-                fileTmpl: 'link(rel="stylesheet", href="%s")',
-                appRoot: 'public',
-                relative: true
-            },
-
-            files: {
-                'views/**/*.pug': require('../pipeline').cssFilesToInject
-            }
-        },
-        /* Bring in JST template object */
-        devTplPug: {
-            options: {
-                startTag: '// TEMPLATES',
-                endTag: '// TEMPLATES END',
-                fileTmpl: 'script(type="text/javascript", src="%s")',
-                appRoot: 'public'
-            },
-            files: {
-                'views/**/*.pug': ['public/jst.js']
-            }
-        },
-
+        
         /** for staging similar with dev */
 
         /** for production */
@@ -303,7 +186,7 @@ module.exports = function(grunt) {
             files: {
                 'public/**/*.html': ['public/min/production.min.js'],
                 'views/**/*.html': ['public/min/production.min.js'],
-                'views/**/*.pug': ['public/min/production.min.js']
+                'views/**/*.ejs': ['public/min/production.min.js']
             }
         },
         prodJsRelative: {
@@ -317,7 +200,7 @@ module.exports = function(grunt) {
             files: {
                 'public/**/*.html': ['public/min/production.min.js'],
                 'views/**/*.html': ['public/min/production.min.js'],
-                'views/**/*.pug': ['public/min/production.min.js']
+                'views/**/*.ejs': ['public/min/production.min.js']
             }
         },
         prodStyles: {
@@ -330,7 +213,7 @@ module.exports = function(grunt) {
             files: {
                 'public/index.html': ['public/min/production.min.css'],
                 'views/**/*.html': ['public/min/production.min.css'],
-                'views/**/*.pug': ['public/min/production.min.css']
+                'views/**/*.ejs': ['public/min/production.min.css']
             }
         },
         prodStylesRelative: {
@@ -344,53 +227,7 @@ module.exports = function(grunt) {
             files: {
                 'public/index.html': ['public/min/production.min.css'],
                 'views/**/*.html': ['public/min/production.min.css'],
-                'views/**/*.pug': ['public/min/production.min.css']
-            }
-        },
-        prodJsPug: {
-            options: {
-                startTag: '// SCRIPTS',
-                endTag: '// SCRIPTS END',
-                fileTmpl: 'script(src="%s")',
-                appRoot: 'public'
-            },
-            files: {
-                'views/**/*.pug': ['public/min/production.min.js']
-            }
-        },
-        prodJsRelativePug: {
-            options: {
-                startTag: '// SCRIPTS',
-                endTag: '// SCRIPTS END',
-                fileTmpl: 'script(src="%s")',
-                appRoot: 'public',
-                relative: true
-            },
-            files: {
-                'views/**/*.pug': ['public/min/production.min.js']
-            }
-        },
-        prodStylesPug: {
-            options: {
-                startTag: '// STYLES',
-                endTag: '// STYLES END',
-                fileTmpl: 'link(rel="stylesheet", href="%s")',
-                appRoot: 'public'
-            },
-            files: {
-                'views/**/*.pug': ['public/min/production.min.css']
-            }
-        },
-        prodStylesRelativePug: {
-            options: {
-                startTag: '// STYLES',
-                endTag: '// STYLES END',
-                fileTmpl: 'link(rel="stylesheet", href="%s")',
-                appRoot: 'public',
-                relative: true
-            },
-            files: {
-                'views/**/*.pug': ['public/min/production.min.css']
+                'views/**/*.ejs': ['public/min/production.min.css']
             }
         }
     });

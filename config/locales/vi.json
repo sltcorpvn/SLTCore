@@ -7,5 +7,7 @@
     "login_form_title": "Login form",
     "username": "Username:",
     "password": "Password:",
-    "login": "Login"
+	"login": "Login",
+	"login_page": "Trang đăng nhập",
+	"function_name": "Hệ thống tìm đường"
 }

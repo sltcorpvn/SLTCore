@@ -4,55 +4,48 @@
 	    <meta charset="urf-8">
 		<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="description" content="<%- _('company_name'); %>">
-		<meta name="author" content="<%- _('company_name'); %>">
-		<meta content="width="device-width, initial-scale=1"" name="viewport">
+		<meta name="description" content="<%- __('company_name'); %>">
+		<meta name="author" content="<%- __('company_name'); %>">
+		<meta content="width='device-width, initial-scale=1'" name="viewport">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		
-		<title>Trang đăng nhập - Hệ thống tìm đường</title>
+		<title><%- __('login_page'); %> - <%- __('function_name'); %></title>
 
-        block TITLE
-
-        block SCRIPT
-
-        // GLOBAL STYLES
-        link(rel="stylesheet", href="/styles/responsive.css")
-        link(rel="stylesheet", href="/styles/style.css")
-        // GLOBAL STYLES END
-
-        link(rel='SHORTCUT ICON', href='favicon.ico')
+        <!--STYLES COMMONS-->
+        <link rel="stylesheet" href="/styles/commons/responsive.css">
+        <link rel="stylesheet" href="/styles/commons/style.css">
+        <!--STYLES COMMONS END-->
+        <link rel='SHORTCUT ICON' href='/favicon.ico' />
     </head>
 		
     <body>
-        div(class='container')
-            div(class='header')
-                div(class='logo')
-                    a(href=sails.config.sltconfig.url.front.home)
-                        - var title = __('company_name');
-                        img(class='site-logo', src=sails.config.sltconfig.url.front.home+'images/logo.png', alt='SLT logo', title=title )
-                    div(class='name-box')
-                        a(href=sails.config.sltconfig.url.front.home)
-                            h1(class="site-name") #{__('site_name')}
-                        span(class="site-tagline") #{__('site_tagline')}
-            
-                div(class='main-menu')
-                    block MENU
+        <div clas='container'>
+            <div class='header'>
+                <div class='logo'>
+                    <a href='<%= sails.config.sltconfig.url.front.home %>'>
+                        <img class='site-logo' src='<%= sails.config.sltconfig.url.front.home %>images/logo.png' alt='<% __('company_name'); %>'/>
+                    </a>
+                    <div class='name-box'>
+                        <a href='<%= sails.config.sltconfig.url.front.home %>'><h1 class='site-name'><% __('site_name'); %></h1></a>
+                        <span class='site-tagline'><% __('site_tagline'); %></span>
+                    </div>
+                </div>
+                <div class='main-menu'></div>
+                <div class='header-right'></div>
+            </div>
+            <div class='content'>
+                <div class='main-content'>
+                    <!--TEMPLATES-->
                     
-                div(class='header-right')
-                    block SESSIONINFO
+                    <!--TEMPLATES END-->
+                </div>
+            </div>
+            <div class='footer'><%= __('copyright', new Date().getFullYear()); %></div>
+        </div>
 
-            div(class='content')
-                div(class='main-content')
-                    block CONTENT
-
-            div(class='footer') #{__('copyright', new Date().getFullYear())}
-
-        // SCRIPTS
-        script(src="/js/dependencies/sails.io.js")
-        script(src="/js/jquery/jquery-3.2.1.min.js")
-        script(src="/js/utils.js")
-        // SCRIPTS END
-
-        block JAVASCRIPT    
+        <!--SCRIPTS COMMONS-->
+        <script src="/js/commons/utils.js"></script>
+        <script src="/js/jquery/jquery-3.2.1.min.js"></script>
+        <!--SCRIPTS COMMONS END-->
 	</body>	
 </html>		

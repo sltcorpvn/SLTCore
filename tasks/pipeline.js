@@ -13,28 +13,39 @@
 
 /* CSS files to inject in order */
 var cssFilesToInject = [
-  'styles/**/*.css',
-  'styles/*.css'
+    'styles/**/*.css',
+    'styles/*.css'
 ];
 
 /* Client-side javascript files to inject in order */
 var jsFilesToInject = [
 
-  /* Load sails.io before everything else */
-  'js/dependencies/sails.io.js',
+    /* Load sails.io before everything else */
+    'js/dependencies/sails.io.js',
 
-  /* Dependencies like jQuery, or Angular are brought in here */
-  'js/dependencies/**/*.js',
+    /* Dependencies like jQuery, or Angular are brought in here */
+    'js/dependencies/**/*.js',
 
-  /* All of the rest of your client-side js files */
-  'js/**/*.js',
-  'js/*.js'
+    /* All of the rest of your client-side js files */
+    'js/**/*.js',
+    'js/*.js'
 ];
 
 /* Client-side HTML templates are injected using the sources below
  The ordering of these templates shouldn't matter. */
 var templateFilesToInject = [
-  'templates/**/*.html'
+    'templates/**/*.html'
+];
+
+/* CSS commons file to inject in template */
+var cssCommonFiles = [
+    'styles/commons/*.css'
+];
+
+/** JS commons file to inject to template */
+var jsCommonFiles = [
+    'js/commons/*.js',
+    'js/jquery/jquery-3.2.1.min.js'
 ];
 
 /* Default path for public folder (see documentation for more information) */
@@ -44,25 +55,36 @@ var tmpPath = 'public/';
 (i.e. where the other Grunt tasks spit them out, or in some cases, where
  they reside in the first place) */
 module.exports.cssFilesToInject = cssFilesToInject.map(function(cssPath) {
-  /* If we're ignoring the file, make sure the ! is at the beginning of the path */
-  if (cssPath[0] === '!') {
-    return require('path').join('!public/', cssPath.substr(1));
-  }
-  return require('path').join('public/', cssPath);
+    /* If we're ignoring the file, make sure the ! is at the beginning of the path */
+    if (cssPath[0] === '!') {
+        return require('path').join('!public/', cssPath.substr(1));
+    }
+    return require('path').join('public/', cssPath);
 });
 module.exports.jsFilesToInject = jsFilesToInject.map(function(jsPath) {
-  /* If we're ignoring the file, make sure the ! is at the beginning of the path */
-  if (jsPath[0] === '!') {
-    return require('path').join('!public/', jsPath.substr(1));
-  }
-  return require('path').join('public/', jsPath);
+    /* If we're ignoring the file, make sure the ! is at the beginning of the path */
+    if (jsPath[0] === '!') {
+        return require('path').join('!public/', jsPath.substr(1));
+    }
+    return require('path').join('public/', jsPath);
 });
 module.exports.templateFilesToInject = templateFilesToInject.map(function(tplPath) {
-  /* If we're ignoring the file, make sure the ! is at the beginning of the path */
-  if (tplPath[0] === '!') {
-    return require('path').join('!assets/', tplPath.substr(1));
-  }
-  return require('path').join('assets/',tplPath);
+    /* If we're ignoring the file, make sure the ! is at the beginning of the path */
+    if (tplPath[0] === '!') {
+        return require('path').join('!assets/', tplPath.substr(1));
+    }
+    return require('path').join('assets/',tplPath);
 });
-
+module.exports.cssCommonFiles = cssCommonFiles.map(function(cssPath){
+    if(cssPath[0] == '!'){
+        return require('path').join('!public/', cssPath.substr(1));
+    }
+    return require('path').join('public/', cssPath);
+});
+module.exports.jsCommonFiles = jsCommonFiles.map(function(jsPath){
+    if(jsPath[0] == '!'){
+        return require('path').join('!public/', jsPath.substr(1));
+    }
+    return require('path').join('public/', jsPath);
+});
 

@@ -170,5 +170,5 @@ module.exports.blueprints = {
    * Defaults to false.
    */
     jsonp: false,
-
+    expectIntegerId: false
 };

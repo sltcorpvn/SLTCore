@@ -21,8 +21,8 @@
  */
 
 module.exports.routes = {
-
     '/'           : '/login',
+    '/layout'     : {view: 'commons/layout'},
     'GET /login'  : 'LoginController.showLogin',
     'POST /login' : 'LoginController.login'
 };

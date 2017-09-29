@@ -14,7 +14,6 @@
 module.exports.views = {
 
     engine: 'ejs',
-    //extension: 'pug',
   /****************************************************************************
   *                                                                           *
   * Layouts are simply top-level HTML templates you can use as wrappers for   *
@@ -71,5 +70,5 @@ module.exports.views = {
   *                                                                           *
   ****************************************************************************/
 
-  partials: false
+    partials: false
 };
