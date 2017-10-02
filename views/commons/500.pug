@@ -1,0 +1,16 @@
+extends layout.pug
+
+block TITLE
+    title #{__("title_500")}
+
+block CONTENT
+    .error
+        h1 #{__('500_header')}
+        h2 
+        - 
+            if (typeof error!== 'undefined'){
+                var msg = error;
+            }else {
+                var msg = __('500_description');
+            }
+            = msg

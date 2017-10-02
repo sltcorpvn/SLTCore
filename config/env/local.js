@@ -4,9 +4,9 @@
 
 module.exports = {
     
-    // models: {
-    //     connection: 'localMongodbServer'
-    // },
+    models: {
+        connection: 'localMongodbServer'
+    }
     
 };
 

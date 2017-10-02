@@ -3,6 +3,7 @@ module.exports = function (grunt) {
         'compileLocalAssets', 
         'linkLocalAssets',  
         'clean:dev',
-        'copy:dev'
+        'copy:dev',
+        'watch'
     ]);
 };

@@ -1,5 +1,5 @@
 /**
- * loginController
+ * LoginController
  * Created on 22/09/2017.
  * @Description :: server side login
  */

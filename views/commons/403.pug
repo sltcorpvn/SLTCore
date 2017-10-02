@@ -1,0 +1,16 @@
+extends layout.pug
+
+block TITLE
+    title #{__("title_403")}
+
+block CONTENT
+    .error
+        h1 #{__('403_header')}
+        h2 
+        - 
+            if (typeof message !== 'undefined'){
+                var msg = message;
+            }else {
+                var msg = __('403_description');
+            }
+            = msg

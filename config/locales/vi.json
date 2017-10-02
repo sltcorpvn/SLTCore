@@ -3,11 +3,20 @@
 	"site_tagline": "Tìm đường & quản lý",
 	"copyright": "© Copyright %s Smart Logistic Technology Company All Rights Reserved.",
 	"company_name": "Smart Logistic Technology Company",
-	"title.login": "Trang đăng nhập - Hệ thống tìm đường",
+	"title_login":"Trang đăng nhập - Hệ thống tìm đường",
     "login_form_title": "Login form",
     "username": "Username:",
     "password": "Password:",
 	"login": "Login",
 	"login_page": "Trang đăng nhập",
-	"function_name": "Hệ thống tìm đường"
+	"function_name": "Hệ thống tìm đường",
+	"title_403": "403: Forbidden - Hệ thống tìm đường",
+	"403_header": "Forbidden",
+	"403_description": "You don't have permission to see the page you're trying to reach.",
+	"title_404": "404: Page not found - Hệ thống tìm đường",
+	"404_header": "Page not found!",
+	"404_description": "The page you were trying to reach doesn't exist.",
+	"title_500": "500: Internal server error - Hệ thống tìm đường",
+	"500_header": "Internal Server Error. Something isn't right here.",
+	"500_description": "A team of highly trained sea bass is working on this as we speak.<br/>If the problem persists, please <a href='mailto://info@sltcorp.vn'>contact the system administrator</a> and inform them of the time that the error occured, and anything you might have done that may have caused the error."
 }

@@ -39,7 +39,8 @@ var templateFilesToInject = [
 
 /* CSS commons file to inject in template */
 var cssCommonFiles = [
-    'styles/commons/*.css'
+    'styles/commons/*.css',
+    'styles/dependencies/awesome/font-awesome.min.css'
 ];
 
 /** JS commons file to inject to template */
