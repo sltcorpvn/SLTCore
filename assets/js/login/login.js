@@ -4,7 +4,7 @@ $(document).ready(function(){
         evt.preventDefault();
         if (loginValidate()) {
             $.ajax({
-                url: sails.config.sltconfig.url.front.login,
+                url: '#{sails.config.sltconfig.url.front.login}',
                 type: 'POST',
                 dataType: "json",
                 data: {username: $("#username").val(), password: $("#password").val()},
@@ -29,12 +29,12 @@ function loginValidate() {
         return true;
     } else {
         if (!user) {
-            $("#username").next().html("login_username_invalid");
+            $("#username").next().html('#{__("login_username_invalid")}');
         } else {
             $("#username").next().html("");
         }
         if (!pass) {
-            $("#password").next().html("login_password_invalid");
+            $("#password").next().html('#{__("login_password_invalid")}');;
         } else {
             $("#password").next().html("");
         }
