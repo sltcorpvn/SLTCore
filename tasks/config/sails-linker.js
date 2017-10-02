@@ -36,12 +36,13 @@ module.exports = function(grunt) {
                 startTag: '<!--SCRIPTS COMMONS-->',
                 endTag: '<!--SCRIPTS COMMONS END-->',
                 fileTmpl: '<script src="%s"></script>',
-                appRoot: 'public'
+                appRoot: '.tmp/public'
             },
             files: {
-                'public/**/*.html': require('../pipeline').jsCommonFiles,
+                '.tmp/public/**/*.html': require('../pipeline').jsCommonFiles,
                 'views/**/*.html': require('../pipeline').jsCommonFiles,
-                'views/**/*.ejs': require('../pipeline').jsCommonFiles
+                'views/**/*.ejs': require('../pipeline').jsCommonFiles,
+                'views/**/*.pug': require('../pipeline').jsCommonFiles
             }
         },
         localJsRelative: {
@@ -49,11 +50,11 @@ module.exports = function(grunt) {
                 startTag: '<!--SCRIPTS-->',
                 endTag: '<!--SCRIPTS END-->',
                 fileTmpl: '<script src="%s"></script>',
-                appRoot: 'public',
+                appRoot: '.tmp/public',
                 relative: true
             },
             files: {
-                'public/**/*.html': require('../pipeline').jsFilesToInject,
+                '.tmp/public/**/*.html': require('../pipeline').jsFilesToInject,
                 'views/**/*.html': require('../pipeline').jsFilesToInject,
                 'views/**/*.ejs': require('../pipeline').jsFilesToInject
             }
@@ -63,12 +64,13 @@ module.exports = function(grunt) {
                 startTag: '<!--STYLES COMMONS-->',
                 endTag: '<!--STYLES COMMONS END-->',
                 fileTmpl: '<link rel="stylesheet" href="%s">',
-                appRoot: 'public'
+                appRoot: '.tmp/public'
             },
             files: {
-                'public/**/*.html': require('../pipeline').cssCommonFiles,
+                '.tmp/public/**/*.html': require('../pipeline').cssCommonFiles,
                 'views/**/*.html': require('../pipeline').cssCommonFiles,
-                'views/**/*.ejs': require('../pipeline').cssCommonFiles
+                'views/**/*.ejs': require('../pipeline').cssCommonFiles,
+                'views/**/*.pug': require('../pipeline').cssCommonFiles
                 //,'view/commons/login.ejs': require('../pipeline').cssLoginFiles
             }
         },
@@ -77,11 +79,11 @@ module.exports = function(grunt) {
                 startTag: '<!--STYLES-->',
                 endTag: '<!--STYLES END-->',
                 fileTmpl: '<link rel="stylesheet" href="%s">',
-                appRoot: 'public',
+                appRoot: '.tmp/public',
                 relative: true
             },
             files: {
-                'public/**/*.html': require('../pipeline').cssFilesToInject,
+                '.tmp/public/**/*.html': require('../pipeline').cssFilesToInject,
                 'views/**/*.html': require('../pipeline').cssFilesToInject,
                 'views/**/*.ejs': require('../pipeline').cssFilesToInject
             }
@@ -92,12 +94,12 @@ module.exports = function(grunt) {
                 startTag: '<!--TEMPLATES-->',
                 endTag: '<!--TEMPLATES END-->',
                 fileTmpl: '<script type="text/javascript" src="%s"></script>',
-                appRoot: 'public'
+                appRoot: '.tmp/public'
             },
             files: {
-                'public/index.html': ['public/jst.js'],
-                'views/**/*.html': ['public/jst.js'],
-                'views/**/*.ejs': ['public/jst.js']
+                '.tmp/public/index.html': ['.tmp/public/jst.js'],
+                'views/**/*.html': ['.tmp/public/jst.js'],
+                'views/**/*.ejs': ['.tmp/public/jst.js']
             }
         },
 
@@ -107,10 +109,10 @@ module.exports = function(grunt) {
                 startTag: '<!--SCRIPTS COMMONS-->',
                 endTag: '<!--SCRIPTS COMMONS END-->',
                 fileTmpl: '<script src="%s"></script>',
-                appRoot: 'public'
+                appRoot: '.tmp/public'
             },
             files: {
-                'public/**/*.html': require('../pipeline').jsCommonFiles,
+                '.tmp/public/**/*.html': require('../pipeline').jsCommonFiles,
                 'views/**/*.html': require('../pipeline').jsCommonFiles,
                 'views/**/*.ejs': require('../pipeline').jsCommonFiles
             }
@@ -120,11 +122,11 @@ module.exports = function(grunt) {
                 startTag: '<!--SCRIPTS-->',
                 endTag: '<!--SCRIPTS END-->',
                 fileTmpl: '<script src="%s"></script>',
-                appRoot: 'public',
+                appRoot: '.tmp/public',
                 relative: true
             },
             files: {
-                'public/**/*.html': require('../pipeline').jsFilesToInject,
+                '.tmp/public/**/*.html': require('../pipeline').jsFilesToInject,
                 'views/**/*.html': require('../pipeline').jsFilesToInject,
                 'views/**/*.ejs': require('../pipeline').jsFilesToInject
             }
@@ -134,11 +136,11 @@ module.exports = function(grunt) {
                 startTag: '<!--STYLES COMMONS-->',
                 endTag: '<!--STYLES COMMONS END-->',
                 fileTmpl: '<link rel="stylesheet" href="%s">',
-                appRoot: 'public'
+                appRoot: '.tmp/public'
             },
 
             files: {
-                'public/**/*.html': require('../pipeline').cssCommonFiles,
+                '.tmp/public/**/*.html': require('../pipeline').cssCommonFiles,
                 'views/**/*.html': require('../pipeline').cssCommonFiles,
                 'views/**/*.ejs': require('../pipeline').cssCommonFiles
             }
@@ -148,12 +150,12 @@ module.exports = function(grunt) {
                 startTag: '<!--STYLES-->',
                 endTag: '<!--STYLES END-->',
                 fileTmpl: '<link rel="stylesheet" href="%s">',
-                appRoot: 'public',
+                appRoot: '.tmp/public',
                 relative: true
             },
 
             files: {
-                'public/**/*.html': require('../pipeline').cssFilesToInject,
+                '.tmp/public/**/*.html': require('../pipeline').cssFilesToInject,
                 'views/**/*.html': require('../pipeline').cssFilesToInject,
                 'views/**/*.ejs': require('../pipeline').cssFilesToInject
             }
@@ -164,12 +166,12 @@ module.exports = function(grunt) {
                 startTag: '<!--TEMPLATES-->',
                 endTag: '<!--TEMPLATES END-->',
                 fileTmpl: '<script type="text/javascript" src="%s"></script>',
-                appRoot: 'public'
+                appRoot: '.tmp/public'
             },
             files: {
-                'public/index.html': ['public/jst.js'],
-                'views/**/*.html': ['public/jst.js'],
-                'views/**/*.ejs': ['public/jst.js']
+                '.tmp/public/index.html': ['.tmp/public/jst.js'],
+                'views/**/*.html': ['.tmp/public/jst.js'],
+                'views/**/*.ejs': ['.tmp/public/jst.js']
             }
         },
         
@@ -181,12 +183,12 @@ module.exports = function(grunt) {
                 startTag: '<!--SCRIPTS-->',
                 endTag: '<!--SCRIPTS END-->',
                 fileTmpl: '<script src="%s"></script>',
-                appRoot: 'public'
+                appRoot: '.tmp/public'
             },
             files: {
-                'public/**/*.html': ['public/min/production.min.js'],
-                'views/**/*.html': ['public/min/production.min.js'],
-                'views/**/*.ejs': ['public/min/production.min.js']
+                '.tmp/public/**/*.html': ['.tmp/public/min/production.min.js'],
+                'views/**/*.html': ['.tmp/public/min/production.min.js'],
+                'views/**/*.ejs': ['.tmp/public/min/production.min.js']
             }
         },
         prodJsRelative: {
@@ -194,13 +196,13 @@ module.exports = function(grunt) {
                 startTag: '<!--SCRIPTS-->',
                 endTag: '<!--SCRIPTS END-->',
                 fileTmpl: '<script src="%s"></script>',
-                appRoot: 'public',
+                appRoot: '.tmp/public',
                 relative: true
             },
             files: {
-                'public/**/*.html': ['public/min/production.min.js'],
-                'views/**/*.html': ['public/min/production.min.js'],
-                'views/**/*.ejs': ['public/min/production.min.js']
+                '.tmp/public/**/*.html': ['.tmp/public/min/production.min.js'],
+                'views/**/*.html': ['.tmp/public/min/production.min.js'],
+                'views/**/*.ejs': ['.tmp/public/min/production.min.js']
             }
         },
         prodStyles: {
@@ -208,12 +210,12 @@ module.exports = function(grunt) {
                 startTag: '<!--STYLES-->',
                 endTag: '<!--STYLES END-->',
                 fileTmpl: '<link rel="stylesheet" href="%s">',
-                appRoot: 'public'
+                appRoot: '.tmp/public'
             },
             files: {
-                'public/index.html': ['public/min/production.min.css'],
-                'views/**/*.html': ['public/min/production.min.css'],
-                'views/**/*.ejs': ['public/min/production.min.css']
+                '.tmp/public/index.html': ['.tmp/public/min/production.min.css'],
+                'views/**/*.html': ['.tmp/public/min/production.min.css'],
+                'views/**/*.ejs': ['.tmp/public/min/production.min.css']
             }
         },
         prodStylesRelative: {
@@ -221,13 +223,13 @@ module.exports = function(grunt) {
                 startTag: '<!--STYLES-->',
                 endTag: '<!--STYLES END-->',
                 fileTmpl: '<link rel="stylesheet" href="%s">',
-                appRoot: 'public',
+                appRoot: '.tmp/public',
                 relative: true
             },
             files: {
-                'public/index.html': ['public/min/production.min.css'],
-                'views/**/*.html': ['public/min/production.min.css'],
-                'views/**/*.ejs': ['public/min/production.min.css']
+                '.tmp/public/index.html': ['.tmp/public/min/production.min.css'],
+                'views/**/*.html': ['.tmp/public/min/production.min.css'],
+                'views/**/*.ejs': ['.tmp/public/min/production.min.css']
             }
         }
     });

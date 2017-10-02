@@ -44,12 +44,13 @@ var cssCommonFiles = [
 
 /** JS commons file to inject to template */
 var jsCommonFiles = [
+    'js/dependencies/jquery/jquery-3.2.1.min.js',
     'js/commons/*.js',
-    'js/jquery/jquery-3.2.1.min.js'
+    'js/dependencies/sails.io.js'
 ];
 
 /* Default path for public folder (see documentation for more information) */
-var tmpPath = 'public/';
+var tmpPath = '.tmp/public/';
 
 /* Prefix relative paths to source files so they point to the proper locations
 (i.e. where the other Grunt tasks spit them out, or in some cases, where
@@ -57,16 +58,16 @@ var tmpPath = 'public/';
 module.exports.cssFilesToInject = cssFilesToInject.map(function(cssPath) {
     /* If we're ignoring the file, make sure the ! is at the beginning of the path */
     if (cssPath[0] === '!') {
-        return require('path').join('!public/', cssPath.substr(1));
+        return require('path').join('!' + tmpPath, cssPath.substr(1));
     }
-    return require('path').join('public/', cssPath);
+    return require('path').join(tmpPath, cssPath);
 });
 module.exports.jsFilesToInject = jsFilesToInject.map(function(jsPath) {
     /* If we're ignoring the file, make sure the ! is at the beginning of the path */
     if (jsPath[0] === '!') {
-        return require('path').join('!public/', jsPath.substr(1));
+        return require('path').join('!' + tmpPath, jsPath.substr(1));
     }
-    return require('path').join('public/', jsPath);
+    return require('path').join(tmpPath, jsPath);
 });
 module.exports.templateFilesToInject = templateFilesToInject.map(function(tplPath) {
     /* If we're ignoring the file, make sure the ! is at the beginning of the path */
@@ -77,14 +78,14 @@ module.exports.templateFilesToInject = templateFilesToInject.map(function(tplPat
 });
 module.exports.cssCommonFiles = cssCommonFiles.map(function(cssPath){
     if(cssPath[0] == '!'){
-        return require('path').join('!public/', cssPath.substr(1));
+        return require('path').join('!' + tmpPath, cssPath.substr(1));
     }
-    return require('path').join('public/', cssPath);
+    return require('path').join(tmpPath, cssPath);
 });
 module.exports.jsCommonFiles = jsCommonFiles.map(function(jsPath){
     if(jsPath[0] == '!'){
-        return require('path').join('!public/', jsPath.substr(1));
+        return require('path').join('!' + tmpPath, jsPath.substr(1));
     }
-    return require('path').join('public/', jsPath);
+    return require('path').join(tmpPath, jsPath);
 });
 

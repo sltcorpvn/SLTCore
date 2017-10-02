@@ -27,7 +27,7 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: './assets',
                 src: ['**/*.!(coffee|less)'],
-                dest: 'public'
+                dest: '.tmp/public'
             }]
         },
         build: {
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: './public',
                 src: ['**/*'],
-                dest: 'public'
+                dest: '.tmp/public'
             }]
         }
     });

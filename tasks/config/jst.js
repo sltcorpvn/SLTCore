@@ -25,7 +25,7 @@ module.exports = function(grunt) {
         dev: {
 
             files: {
-                'public/jst.js': require('../pipeline').templateFilesToInject
+                '.tmp/public/jst.js': require('../pipeline').templateFilesToInject
             }
         },
         compile: {
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
                 }
             },
             files: {
-                'public/templates.js': require('../pipeline').templateFilesToInject
+                '.tmp/public/templates.js': require('../pipeline').templateFilesToInject
             }
         }
     });

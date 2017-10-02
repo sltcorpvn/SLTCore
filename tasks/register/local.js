@@ -2,7 +2,7 @@ module.exports = function (grunt) {
     grunt.registerTask('local', [
         'compileLocalAssets', 
         'linkLocalAssets',  
-        'clean:build',
-        'copy:build'
+        'clean:dev',
+        'copy:dev'
     ]);
 };

@@ -11,12 +11,10 @@ html
 
         block TITLE
 
-        block SCRIPT
-
-        // GLOBAL STYLES
-        link(rel="stylesheet", href="/styles/responsive.css")
-        link(rel="stylesheet", href="/styles/style.css")
-        // GLOBAL STYLES END
+        <!--STYLES COMMONS-->
+        <link rel="stylesheet" href="/styles/commons/responsive.css">
+        <link rel="stylesheet" href="/styles/commons/style.css">
+        <!--STYLES COMMONS END-->
 
         link(rel='SHORTCUT ICON', href='favicon.ico')
 
@@ -44,10 +42,12 @@ html
 
             div(class='footer') #{__('copyright', new Date().getFullYear())}
 
-        // SCRIPTS
-        script(src="/js/dependencies/sails.io.js")
-        script(src="/js/commons/utils.js")
-        script(src="/js/jquery/jquery-3.2.1.min.js")
-        // SCRIPTS END
+        <!--SCRIPTS COMMONS-->
+        <script src="/js/dependencies/jquery/jquery-3.2.1.min.js"></script>
+        <script src="/js/commons/utils.js"></script>
+        <script src="/js/dependencies/sails.io.js"></script>
+        <!--SCRIPTS COMMONS END-->
+
+        block SCRIPT
 
         block JAVASCRIPT    

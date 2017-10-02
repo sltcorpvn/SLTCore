@@ -23,7 +23,7 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: 'assets/js/',
                 src: ['**/*.coffee'],
-                dest: 'public/js/',
+                dest: '.tmp/public/js/',
                 ext: '.js'
             }]
           }
