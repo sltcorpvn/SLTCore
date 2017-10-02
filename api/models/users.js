@@ -51,11 +51,17 @@ module.exports = {
             }
           });
         });
-        Counters.count().exec(function(err, cnt){
+        Counters.native(function(err, col){
             if(err) next(err);
             else{
-                user['user_id'] = cnt + 1;
-                cb();
+                col.findAndModify(
+                    {_id: user_id},
+                    [['_id', 'asc']],
+                    {$inc: {num: 1}},
+                    {new: true, upsert: true},
+                    function(err, data){
+                        cb(err, data.value.num);
+                });
             }
         });
     }

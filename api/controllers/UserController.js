@@ -5,20 +5,18 @@
  */
 
 module.exports = {
-    createTmp: function(req, res){
-        var userRepo = require('../../sqlScript/user.js');
-        for (var _idx = 0; _idx < userRepo.userList.length; _idx++) {
-            
-            var __user = userRepo.userList[_idx];
-            console.log(">>>>>>>>>>>>>>>>>>>> " + JSON.stringify(__user));
+    getProfile: function(req, res){
+        var sess = req.sltcore;
+        var user = sess.user;
 
-            Users.findOrCreate({user_id: __user.user_id}, __user).then(function (_user) {
-                console.log("Contact created: " + JSON.stringify(_user));
-            }).catch(function (err) {
-                console.error("Error on UserService.preloadData");
-                console.error(err);
-                console.error(JSON.stringify(err));
-            });
+        if(sess && user){
+            /*show profile of user*/
+            res.render("users/profile",{user: user});
+        }else{
+            /*store current url for redirect after login*/
+            sess.backURL = req.url;
+            /*go to login page*/
+            res.redirect( sails.config.sltconfig.url.front.login );
         }
     }
 };

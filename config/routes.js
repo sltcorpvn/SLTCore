@@ -22,7 +22,8 @@
 
 module.exports.routes = {
     '/'           : '/login',
-    'GET /tmp'        : 'UserController.createTmp',
     'GET /login'  : 'LoginController.showLogin',
-    'POST /login' : 'LoginController.login'
+    'POST /login' : 'LoginController.ajaxLogin',
+    'GET /logout' : 'LoginController.logout',
+    'GET /profile': 'UserController.getProfile'
 };

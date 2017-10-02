@@ -18,5 +18,10 @@
 	"404_description": "The page you were trying to reach doesn't exist.",
 	"title_500": "500: Internal server error - Hệ thống tìm đường",
 	"500_header": "Internal Server Error. Something isn't right here.",
-	"500_description": "A team of highly trained sea bass is working on this as we speak.<br/>If the problem persists, please <a href='mailto://info@sltcorp.vn'>contact the system administrator</a> and inform them of the time that the error occured, and anything you might have done that may have caused the error."
+	"500_description": "A team of highly trained sea bass is working on this as we speak.<br/>If the problem persists, please <a href='mailto://info@sltcorp.vn'>contact the system administrator</a> and inform them of the time that the error occured, and anything you might have done that may have caused the error.",
+	"login_username_invalid": "Username is invalid!",
+	"login_password_invalid": "Password is invalid!",
+	"profile_title": "Thông tin cá nhân - Hệ thống tìm đường",
+	"profile_header": "Thông tin cá nhân của bạn",
+	"logout": "Logout"
 }

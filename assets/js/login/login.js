@@ -3,13 +3,13 @@ $(document).ready(function(){
     $("#login").submit(function (evt) {
         evt.preventDefault();
         if (loginValidate()) {
-            jQuery.ajax({
-                url: '#{url_login}',
+            $.ajax({
+                url: sails.config.sltconfig.url.front.login,
                 type: 'POST',
                 dataType: "json",
                 data: {username: $("#username").val(), password: $("#password").val()},
                 success: function (data) {
-                    if (data.status == 'fail') {
+                    if (data.status === 0) {
                         $(".loginmsg").html(data.err);
                         $("#username").focus();
                     } else {
@@ -29,12 +29,12 @@ function loginValidate() {
         return true;
     } else {
         if (!user) {
-            $("#username").next().html("Username invalid!");
+            $("#username").next().html("login_username_invalid");
         } else {
             $("#username").next().html("");
         }
         if (!pass) {
-            $("#password").next().html("Password invalid!");
+            $("#password").next().html("login_password_invalid");
         } else {
             $("#password").next().html("");
         }

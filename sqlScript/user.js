@@ -3,7 +3,7 @@ module.exports = {
         {
             user_id:1,
             username:"sltadmin",
-            password:"123456",
+            password:"$2y$10$jYyIQaTl43Xo3gSOd6JDA.hiIZlBinEmayy/NsEuqXMUe71zgs0dO",
             first_name:"Admin",
             last_name:"Supper",
             code:"",
