@@ -25,8 +25,14 @@ module.exports = {
             var backURL = sails.config.sltconfig.url.front.user.profile;
             if(sess && sess.backURL)
                 backURL = sess.backURL;
-             
-            Users.findOne({username: username, valid_to: { $gte: new Date()}})
+
+            var curDate = Utils.genDBDate(); 
+            Users.findOne({$and:[
+                                    {$or: [{valid_to: null}, {valid_to: {$gt: curDate}}
+                                ]
+                            },
+                            {username: username}
+                            ]})
                  .then((user) => {
                      if(!user){
                          res.send({status: 0, err: "User is not exist!"});

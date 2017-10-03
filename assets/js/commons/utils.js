@@ -87,13 +87,3 @@ module.exports = {
         return false;
     }
 }
-/*
-module.exports = {
-    frontDateFormat     : frontDateFormat,
-    frontDateTimeFormat : frontDateTimeFormat,
-    dbDateFormat        : dbDateFormat,
-    genDBDateTime       : genDBDateTime,
-    genDBDate           : genDBDate,
-    isEmailFormat       : isEmailFormat
-};
-*/

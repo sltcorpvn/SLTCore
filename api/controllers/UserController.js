@@ -11,7 +11,7 @@ module.exports = {
 
         if(sess && user){
             /*show profile of user*/
-            res.render("users/profile",{user: user});
+            res.render("user/profile",{user: user});
         }else{
             /*store current url for redirect after login*/
             sess.backURL = req.url;

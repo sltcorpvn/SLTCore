@@ -8,7 +8,7 @@ module.exports = {
     autoPK: false,
     schema: true,    
     attributes: {
-        user_id: { type: 'integer', autoIncrement: true, primaryKey: true, unique: true},
+        _id: { type: 'integer', autoIncrement: true, primaryKey: true, unique: true},
         username: { type: 'string', index: true, unique: true},
         password: { type: 'string', minLength: 6, required: true},
         first_name: { type: 'string'},
