@@ -1,0 +1,68 @@
+<head>
+        <link rel="stylesheet" href="styles/map.css" type="text/css">
+</head>
+<body>
+<p>Users Management</p>
+<form action="/users" method="post">
+
+<input type="text" name="username" />
+<input type="text" name="email" />
+<input type="submit" name="submit" value="Get users" />
+<h2>Variable</h2>
+<script>
+</script>
+<ul class="mapdiv" >
+    <% tagline.forEach(function(tag) { %>
+        <li><%= tag.obj.location.coordinates[0] %> - <%= tag.obj.location.coordinates[1] %></li>
+    <% }); %>
+</ul>
+<mapdiv>Loop</mapdiv>
+
+    <% drinks.forEach(function(drink) {  %>
+        <p><%= drink.name %> - <%= drink.drunkness %></p>
+        <script>
+            alert('<%= drink.name %>');
+        </script>
+    <% }); %>
+
+</form>
+
+<script type="text/javascript" src="js/utils.js"></script>
+<script>
+var date = "1999/12/12";
+date = formatToFrontDate(date);
+console.log(date);
+</script>
+<div class="divContent">
+    <div style="width:800px; height:400px; left:10px; border:1px solid;" id="divMap"></div>
+</div>
+<script src="http://developers.vietbando.com/V2/Scripts/vietbandomapsapi.js?key=1f0207b4-b29c-4616-b86c-7ba02b1eba81" type="text/javascript"></script>
+    <script>
+
+        var initialize = function ()
+        {
+            var mapContainer = document.getElementById("divMap");
+            
+                        var mapProp = {
+                            center: new vbd.LatLng(10.7953242, 106.681515),
+                            zoom: 16
+                        };
+                        var map = new vbd.Map(mapContainer, mapProp);
+                        var position = map.getCenter(); /*vị trí của marker trên map*/
+                        var marker = new vbd.Marker({
+                            position: position
+                        });
+                        marker.setMap(map);
+            
+                        var infowindow = new vbd.InfoWindow({ content: '<%= tagline %>' });
+                        infowindow.open(map, marker);
+                        vbd.event.addListener(marker, 'click', function (param)
+                        {
+                            infowindow.open(map, marker);
+                        });
+                    };
+                    vbd.event.addDomListener(window, 'load', initialize);
+            
+    </script>
+
+</body>
