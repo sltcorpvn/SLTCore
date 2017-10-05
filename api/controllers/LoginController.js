@@ -28,7 +28,7 @@ module.exports = {
 
             var curDate = Utils.genDBDate(); 
             Users.findOne({$and:[
-                                    {$or: [{valid_to: null}, {valid_to: {$gt: curDate}}
+                                    {$or: [{valid_to: null}, {valid_to: {$gte: curDate}}
                                 ]
                             },
                             {username: username}
