@@ -22,6 +22,7 @@ module.exports.session = {
   *                                                                          *
   ***************************************************************************/
     secret: 'df4919a3a4046fb4077d839b6283a307',
+    key: 'sltcore',
     cookieName    : "sltcore",
     duration      : 30 * 60 * 1000,
     activeDuration: 30 * 60 * 1000,
@@ -34,11 +35,13 @@ module.exports.session = {
   ***************************************************************************/
 
     cookie: {
+        domain    : "core.sltcorp.lc",
         path      : "/",
-        maxAge: 24 * 60 * 60 * 1000,
+        maxAge    : 24 * 60 * 60 * 1000,
+        expire    : new Date(Date.now() + 1800000),
         httpOnly  : true,
         secure    : false,  
-        ephemeral : false              
+        ephemeral : false,              
     },
 
     routesDisabled: ['GET /js/*', 'GET /styles/*', 'GET /images/*']

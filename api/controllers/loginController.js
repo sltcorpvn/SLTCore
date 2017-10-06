@@ -21,22 +21,24 @@ module.exports = {
         if(!username || !password){
             return res.send({status: 0, err: "Username or Password is empty!"});
         }else{
-            var sess = req.sltcore;
+            var sess = req.session.sltcore;
             var backURL = sails.config.sltconfig.url.front.user.profile;
             if(sess && sess.backURL)
                 backURL = sess.backURL;
 
             var curDate = Utils.genDBDate(); 
+            console.log("curDate:"+curDate);
             Users.findOne({$and:[
-                                    {$or: [{valid_to: null}, {valid_to: {$gt: curDate}}
+                                    {$or: [{"valid_to": null}, {"valid_to": {$gte: curDate}}
                                 ]
                             },
-                            {username: username}
+                            {"username": username}
                             ]})
-                 .then((user) => {
-                     if(!user){
-                         res.send({status: 0, err: "User is not exist!"});
-                     }else{
+                .then((user) => {
+                    if(!user){
+                        res.send({status: 0, err: "User is not exist!"});
+                    }else{
+                        console.log("user:"+user.password);
                         bcrypt.compare(password, user.password).then(function(rs){
                             if(!rs){
                                 res.send({status: 0, err: "Password's wrong!"});
@@ -46,9 +48,9 @@ module.exports = {
                                 res.send({status: 1, backURL: backURL});
                             }
                         });
-                     }
-                 })
-                 .catch((err) => res.send({status: 0, err: err})); 
+                    }
+                })
+                .catch((err) => res.send({status: 0, err: err})); 
         }
     },
 
