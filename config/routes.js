@@ -25,5 +25,6 @@ module.exports.routes = {
     'GET /login'  : 'LoginController.showLogin',
     'POST /login' : 'LoginController.ajaxLogin',
     'GET /logout' : 'LoginController.logout',
-    'GET /profile': 'UserController.getProfile'
+    /** for user frontend */
+    'GET /user/profile': 'UserController.getProfile'
 };

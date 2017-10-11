@@ -10,7 +10,7 @@
  */
 
 module.exports.bootstrap = function(cb) {
-
-  /* It's very important to trigger this callback method when you are finished */
-  cb();
+    sails.services.passport.loadStrategies();
+    /* It's very important to trigger this callback method when you are finished */
+    cb();
 };

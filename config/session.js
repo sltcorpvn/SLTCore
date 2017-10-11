@@ -21,8 +21,7 @@ module.exports.session = {
   * of your users, forcing them to log in again.                             *
   *                                                                          *
   ***************************************************************************/
-    secret: 'df4919a3a4046fb4077d839b6283a307',
-    key: 'sltcore',
+    secret        : 'sltcore secret',
     cookieName    : "sltcore",
     duration      : 30 * 60 * 1000,
     activeDuration: 30 * 60 * 1000,
@@ -44,35 +43,7 @@ module.exports.session = {
         ephemeral : false,              
     },
 
-    routesDisabled: ['GET /js/*', 'GET /styles/*', 'GET /images/*']
-
-  /***************************************************************************
-  *                                                                          *
-  * Uncomment the following lines to set up a Redis session store that can   *
-  * be shared across multiple Sails.js servers.                              *
-  *                                                                          *
-  * Requires connect-redis (https://www.npmjs.com/package/connect-redis)     *
-  *                                                                          *
-  ***************************************************************************/
-
-  // adapter: 'redis',
-
-  /***************************************************************************
-  *                                                                          *
-  * The following values are optional, if no options are set a redis         *
-  * instance running on localhost is expected. Read more about options at:   *
-  *                                                                          *
-  * https://github.com/visionmedia/connect-redis                             *
-  *                                                                          *
-  ***************************************************************************/
-
-  // host: 'localhost',
-  // port: 6379,
-  // ttl: <redis session TTL in seconds>,
-  // db: 0,
-  // pass: <redis auth password>,
-  // prefix: 'sess:',
-
+    routesDisabled: ['GET /js/*', 'GET /styles/*', 'GET /images/*'],
 
   /***************************************************************************
   *                                                                          *
@@ -86,13 +57,14 @@ module.exports.session = {
   * $>npm install connect-mongo                                              *
   ***************************************************************************/
 
-    //adapter: 'connect-mongo',
-    //username: '',
-    //password: '',
-    //host: 'localhost',
-    //port: 27017,
-    //db: 'localSRPSystem',
-    //url: 'mongodb://localhost:27017/localSRPSystem', 
+     adapter: "mongo",
+     username: '',
+     password: '',
+     host: 'localhost',
+     port: 27017,
+     db: 'localSRPSystem',
+    //url: 'mongodb://localhost:27017/localSRPSystem/sessions', 
+    //saveUninitialized: true,
 
   /***************************************************************************
   *                                                                          *
@@ -106,14 +78,8 @@ module.exports.session = {
   *                                                                          *
   ***************************************************************************/
 
-    //collection: 'sessions',
-    //stringify: false,
+    collection: 'sessions',
+    //stringify: true,
     //auto_reconnect: false,
     //ssl: false
-    /*mongoOptions: {
-      server: {
-        ssl: true
-      }
-    }*/
-
 };

@@ -6,7 +6,12 @@ module.exports = {
     
     models: {
         connection: 'localMongodbServer'
-    }
+    },
     
+    application_auth: {
+        
+        enableLocalAuth: true
+    },
+        
 };
 

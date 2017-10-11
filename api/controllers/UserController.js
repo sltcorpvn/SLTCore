@@ -6,17 +6,18 @@
 
 module.exports = {
     getProfile: function(req, res){
-        var sess = req.sltcore;
-        var user = sess.user;
-
-        if(sess && user){
+        //var sess = req.session.sltcore;
+        //var user = sess.user;
+        //if(sess && user){
+            console.log("line 15 in usercontroller:"+req.user);
             /*show profile of user*/
-            res.render("user/profile",{user: user});
-        }else{
+            res.render("user/profile", {user: user});
+        //}else{
+        //    console.log("line 19 in usercontroller");
             /*store current url for redirect after login*/
-            sess.backURL = req.url;
+        //    sess.backURL = req.url;
             /*go to login page*/
-            res.redirect( sails.config.sltconfig.url.front.login );
-        }
+        //    res.redirect( sails.config.sltconfig.url.front.login );
+        //}
     }
 };

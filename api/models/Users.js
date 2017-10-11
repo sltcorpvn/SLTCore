@@ -6,7 +6,8 @@ var bcrypt = require('bcryptjs');
 
 module.exports = {
     autoPK: false,
-    schema: true,    
+    schema: true,
+    adapter: 'mongo',
     attributes: {
         _id: { type: 'integer', autoIncrement: true, primaryKey: true, unique: true},
         username: { type: 'string', index: true, unique: true},
@@ -63,6 +64,20 @@ module.exports = {
                         cb(err, data.value.num);
                 });
             }
+        });
+    },
+    beforeUpdate: function(user, cb){
+        bcrypt.genSalt(10, function(err, salt){
+            bcrypt.hash(user.password, salt, function(err, hash){
+                if (err){
+                    console.log(err);
+                    cb(err);
+                }else{
+                    user.password = hash;
+                    user.salt = salt;
+                    cb();
+                }
+            });
         });
     }
 };

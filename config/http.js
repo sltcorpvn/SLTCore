@@ -6,6 +6,9 @@
 module.exports.http = {
     
     middleware: {
+
+        passportInit    : require('passport').initialize(),
+        passportSession : require('passport').session(),
     
         /***************************************************************************
          *                                                                          *
@@ -14,23 +17,25 @@ module.exports.http = {
         *                                                                          *
         ***************************************************************************/
     
-        ///order: [
-            ///'startRequestTimer',
-            ///'cookieParser',
-            ///'session',
-            ///'logger',
-            ///'bodyParser',
-           /// 'handleBodyParserError',
-            ///'compress',
-            ///'methodOverride',
-            ///'poweredBy',
-        //    '$custom',
-        //    'router',
-        //   'www',
-          ///  'favicon',
-          ///  '404',
-          ///  '500'
-        ///],
+        order: [
+            'startRequestTimer',
+            'cookieParser',
+            'bodyParser',
+            'session',
+            'passportInit',
+            'passportSession',            
+            'logger',
+            'handleBodyParserError',
+            'compress',
+            'methodOverride',
+            'poweredBy',
+            ///'$custom',
+            'router',
+            'www',
+            'favicon',
+            '404',
+            '500'
+        ],
 
         startRequestTimer: function (req, res, next){
             req._startTime = new Date();

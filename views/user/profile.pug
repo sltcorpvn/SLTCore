@@ -1,16 +1,17 @@
-extends ../common/layout.pug
+extends ../commons/layout.pug
 
 block TITLE
     title #{__('profile_title')}
 
 block SESSIONINFO
-    include ../common/login-info.pug
+    include ../commons/login-info.pug
 
 block MENU
 
 block CONTENT
     .head-title
         h1 #{__('profile_header')}
+        this is profile page
 
 block SCRIPT
     <script src="/js/login/login.js"></script>    
