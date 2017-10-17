@@ -37,7 +37,8 @@ module.exports = function(req, res, next) {
             //res.json(401);
             return res.redirect(sails.config.sltconfig.url.front.login);
         }
-    }else if (req.session.authenticated) {
+    }else if (req.session.authenticated) { 
+        //req.isAuthenticated()
         console.log("sessionAuth line 41");
         return next();
     }else{

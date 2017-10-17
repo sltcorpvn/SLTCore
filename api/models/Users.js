@@ -27,6 +27,8 @@ module.exports = {
         created_user: { type: 'integer'},
         updated_date: { type: 'date', default: null},
         updated_user: { type: 'integer'},
+
+        passports : { collection: 'Passport', via: 'user' },
         
         toJSON: function() {
             var obj = this.toObject();

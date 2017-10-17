@@ -1,14 +1,22 @@
-module.exports.passport = {
-    local: {
-      strategy: require('passport-local').Strategy
-    },
-  
-    basic: {
-      strategy: require('passport-http').BasicStrategy,
-      protocol: 'basic'
-    },
-}    
-/*var passport = require('passport'),
+/**
+ * Create at 14/10/2017
+ * @author :: Yen Truong
+ */
+
+var passport  = require('passport'),
+LocalStrategy = require('passport-local').Strategy;
+module.exports = {
+    http: {
+        customMiddleware: function(app){
+            console.log('express midleware for passport');
+            app.use(passport.initialize());
+            app.use(passport.session());
+        }
+    }
+};
+
+/*  
+var passport = require('passport'),
 LocalStrategy = require('passport-local').Strategy,
 bcrypt = require('bcryptjs'),
 Utils = require('../api/services/Utils'),
@@ -20,7 +28,7 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(username, done) {
-    User.findOne({$and:[
+    Users.findOne({$and:[
                       {$or: [{valid_to: null}, {valid_to: {$gte: curDate}}]
                       },
                       {username: username}

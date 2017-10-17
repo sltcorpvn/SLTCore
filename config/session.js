@@ -33,7 +33,7 @@ module.exports.session = {
   *                                                                          *
   ***************************************************************************/
 
-    cookie: {
+     cookie: {
         domain    : "core.sltcorp.lc",
         path      : "/",
         maxAge    : 24 * 60 * 60 * 1000,
@@ -62,7 +62,7 @@ module.exports.session = {
      password: '',
      host: 'localhost',
      port: 27017,
-     db: 'localSRPSystem',
+     db: 'localVRPSystem',
     //url: 'mongodb://localhost:27017/localSRPSystem/sessions', 
     //saveUninitialized: true,
 
@@ -78,7 +78,7 @@ module.exports.session = {
   *                                                                          *
   ***************************************************************************/
 
-    collection: 'sessions',
+    //collection: 'sessions',
     //stringify: true,
     //auto_reconnect: false,
     //ssl: false

@@ -58,7 +58,7 @@ module.exports.csrf = false;
 *                                                                           *
 ****************************************************************************/
 
-module.exports.csrf = {
-    grantTokenViaAjax: true,
-    origin: 'localhost, core.sltcorp.lc, core.sltcorp.vn'
-}
+// module.exports.csrf = {
+//     grantTokenViaAjax: true,
+//     origin: '*'
+// }

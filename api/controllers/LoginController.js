@@ -9,19 +9,11 @@ var passport = require('passport');
 module.exports = {
     /** render login view */
     showLogin: function(req, res){
-        // var sess = req.sltcore;
-        // var backURL = sails.config.sltconfig.url.front.user.profile;
-        // if(sess && sess.backURL)
-        //     backURL = sess.backURL;
-
         res.render('commons/login');
     },
 
     ajaxLogin: function(req, res){
         var backURL = sails.config.sltconfig.url.front.user.profile;
-        if(req.session && req.session.backURL)
-            backURL = req.session.backURL;
-        //else req.session.backURL = backURL;
 
         var username = req.body.username ? req.body.username : "";
         var password = req.body.password ? req.body.password : "";
@@ -32,23 +24,23 @@ module.exports = {
                 console.log("line 41");
                 return res.json({status: 0, err: err});
             }
-            if (!user) {
+            if(!user) {
                 console.log("line 45");
                 return res.json({
                     status: 0,
                     err: "User is not exist!"
                 });
             }
-            console.log("backURL:"+backURL);
+            //console.log("backURL:"+backURL);
             req.logIn(user, function(err) {
                 console.log("line 52");
                 console.log("err 50:"+err);
                 if (err) {
-                    console.log("line 54");
+                    console.log("line 54...");
                     return res.json({status: 0, err: err});
                 }
                 //req.session.messages = "Login successfull!";
-                req.session.authenticated = true;
+                //req.session.passport.authenticated = true;
                 //req.authenticated = true;
                 return res.json({
                     status: 1,
