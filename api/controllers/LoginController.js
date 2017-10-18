@@ -3,11 +3,11 @@
  * Created on 22/09/2017.
  * @Description :: server side login
  */
-//var bcrypt = require('bcryptjs');
+
 var passport = require('passport');
 
 module.exports = {
-    /** render login view */
+    
     showLogin: function(req, res){
         res.render('commons/login');
     },
@@ -19,29 +19,20 @@ module.exports = {
         var password = req.body.password ? req.body.password : "";
 
         passport.authenticate('local', function(err, user) {
-            console.log("err:"+err);
             if(err){
-                console.log("line 41");
                 return res.json({status: 0, err: err});
             }
             if(!user) {
-                console.log("line 45");
                 return res.json({
                     status: 0,
                     err: "User is not exist!"
                 });
             }
-            //console.log("backURL:"+backURL);
             req.logIn(user, function(err) {
-                console.log("line 52");
-                console.log("err 50:"+err);
                 if (err) {
-                    console.log("line 54...");
                     return res.json({status: 0, err: err});
                 }
-                //req.session.messages = "Login successfull!";
-                //req.session.passport.authenticated = true;
-                //req.authenticated = true;
+
                 return res.json({
                     status: 1,
                     backURL: backURL
@@ -91,13 +82,6 @@ module.exports = {
     logout: function(req, res){
         req.logout();
         res.redirect(sails.config.sltconfig.url.front.login);
-        /*var sess = req.sltcore;
-        if(sess && sess.user){
-            var backURL = sess.backURL;
-            req.sltcore.reset();
-            sess.backURL = backURL;
-            res.redirect(sails.config.sltconfig.url.front.login);
-        }*/
     }
 };
 

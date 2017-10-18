@@ -36,7 +36,7 @@ module.exports.session = {
      cookie: {
         domain    : "core.sltcorp.lc",
         path      : "/",
-        maxAge    : 24 * 60 * 60 * 1000,
+        maxAge    : 30 * 60 * 1000,
         expire    : new Date(Date.now() + 1800000),
         httpOnly  : true,
         secure    : false,  

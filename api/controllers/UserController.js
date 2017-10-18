@@ -9,9 +9,10 @@ module.exports = {
         //var sess = req.session.sltcore;
         //var user = sess.user;
         //if(sess && user){
-            console.log("line 15 in usercontroller:"+req.user);
+        console.log("line 12 in usercontroller:");
             /*show profile of user*/
-            res.render("user/profile", {user: user});
+        //res.render("user/profile", {user: user});
+        res.render("user/profile");
         //}else{
         //    console.log("line 19 in usercontroller");
             /*store current url for redirect after login*/

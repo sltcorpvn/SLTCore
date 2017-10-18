@@ -3,6 +3,10 @@
  * (sails.config.http)
  */
 
+var passport  = require('passport'),
+LocalStrategy = require('passport-local').Strategy,
+expressSession = require('express-session');
+
 module.exports.http = {
     
     middleware: {
@@ -29,13 +33,17 @@ module.exports.http = {
             'compress',
             'methodOverride',
             'poweredBy',
-            ///'$custom',
+            '$custom',
             'router',
             'www',
             'favicon',
             '404',
             '500'
         ],
+        $custom: function(app){
+            console.log('express midleware for passport');
+            require('./passport.js').init(app);
+        },
 
         startRequestTimer: function (req, res, next){
             req._startTime = new Date();
@@ -46,15 +54,6 @@ module.exports.http = {
             req.on("end", function() {
                 sails.log.silly('response time: ' + new Date() - req._startTime + 'ms');
             });
-            next();
-        },
-
-        cookieParser: function(req, res, next){
-            //
-            next();
-        },
-
-        session: function(req, res, next){
             next();
         },
     

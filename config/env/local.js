@@ -9,7 +9,6 @@ module.exports = {
     },
     
     application_auth: {
-        
         enableLocalAuth: true
     },
         

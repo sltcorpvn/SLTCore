@@ -9,6 +9,9 @@ module.exports = {
     },
     port: process.env.PORT || 80,
     host: "core.sltcorp.vn",
+    application_auth: {
+        enableLocalAuth: true
+    },
     log: {
         level: "info"
     }
