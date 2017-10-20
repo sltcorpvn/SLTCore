@@ -78,7 +78,7 @@ module.exports.session = {
   *                                                                          *
   ***************************************************************************/
 
-    //collection: 'sessions',
+    collection: 'sessions',
     //stringify: true,
     //auto_reconnect: false,
     //ssl: false

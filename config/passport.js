@@ -10,17 +10,18 @@ Utils = require('../api/services/Utils'),
 curDate = Utils.genDBDate();
 
 passport.serializeUser(function(user, done) {
-    done(null, user.username);
+    done(null, user);
 });
 
-passport.deserializeUser(function(username, done) {
-    Users.findOne({$and:[
+passport.deserializeUser(function(user, done) {
+    /*Users.findOne({$and:[
                         {$or: [{valid_to: null}, {valid_to: {$gte: curDate}}]
                         },
                         {username: username}
                       ]} , function (err, user) {
         done(err, user);
-    });
+    });*/
+    done(null, user);
 });
 
 passport.use(new LocalStrategy({
@@ -28,7 +29,7 @@ passport.use(new LocalStrategy({
     passwordField: 'password'
 },
 function(username, password, done) {
-    console.log("current date:"+curDate);
+    
     if(!username || !password){
         return done(null, false, {message: "Username or Password is empty!"});
     }
@@ -49,14 +50,8 @@ function(username, password, done) {
                     message: 'Invalid Password!'
                 });
             }
-            
-            var returnUser = {
-                _id: user._id,
-                username: user.username,
-                email: user.email,
-                created_date: new Date(Date.now())
-            };
-            return done(null, returnUser);
+
+            return done(null, user);
         });
     });
 }

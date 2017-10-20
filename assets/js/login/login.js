@@ -7,14 +7,25 @@ $(document).ready(function(){
                 url: '#{sails.config.sltconfig.url.front.login}',
                 type: 'POST',
                 dataType: "json",
+                crossDomain: true,
+                //headers: {'X-CSRF-TOKEN': "asdfhaifhaihfah"},
+                xhrFields: { withCredentials: true },
                 data: {username: $("#username").val(), password: $("#password").val()},
+                before: function(){
+                    //loading image here
+                },
                 success: function (data) {
+                    console.log(data.status);
+                    console.log(data.backURL);
                     if (data.status === 0) {
                         $(".loginmsg").html(data.err);
                         $("#username").focus();
                     } else {
                         window.location.href = data.backURL;
                     }
+                },
+                complete: function(){
+                    //hide loading image
                 }
             });
         }

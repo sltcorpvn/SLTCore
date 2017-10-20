@@ -22,6 +22,6 @@
 	"login_username_invalid": "Username is invalid!",
 	"login_password_invalid": "Password is invalid!",
 	"profile_title": "Thông tin cá nhân - Hệ thống tìm đường",
-	"profile_header": "Thông tin cá nhân của bạn",
+	"profile_header": "Thông tin cá nhân của %s",
 	"logout": "Logout"
 }

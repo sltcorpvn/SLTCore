@@ -4,13 +4,13 @@ block TITLE
     title #{__('profile_title')}
 
 block SESSIONINFO
-    include ../commons/login-info.pug    
+     //include ../commons/login-info.pug   
 
 block MENU
 
 block CONTENT
     .head-title
-        h1 #{__('profile_header')}
+        h1 #{__('profile_header', req.user.username)}
         this is profile page
 
 block SCRIPT

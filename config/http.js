@@ -41,7 +41,6 @@ module.exports.http = {
             '500'
         ],
         $custom: function(app){
-            console.log('express midleware for passport');
             require('./passport.js').init(app);
         },
 

@@ -9,7 +9,6 @@ module.exports = function(req, res, next){
             //Use this:
             // Initialize Passport
             sails.config.passport.initialize()(req, res, function () {
-                console.log("sessionAuth line 21");
                 // Use the built-in sessions
                 sails.config.passport.session()(req, res, function () {
                     // Make the user available throughout the frontend
