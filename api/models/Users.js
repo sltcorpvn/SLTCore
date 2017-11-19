@@ -21,7 +21,7 @@ module.exports = {
         skype: { type: 'string'},
         last_login: { type: 'date', default: Date.now},
         is_ldap: { type: 'integer'},
-        type: { type: 'integer', default: 1}, /* 0: user, 1: system admin, 3: supper admin (for all) */
+        type: { type: 'integer', default: 1}, /* 1: user, 2: enterprise admin, 3: supper admin (for all) */
         valid_to: { type: 'date', default: null},
         created_date: { type: 'date', default: null},
         created_user: { type: 'integer'},

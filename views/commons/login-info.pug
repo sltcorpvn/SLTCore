@@ -1,6 +1,5 @@
-//login session
 if req.user.username != ''
-    .logout You are&nbsp;
+    .logout #{__("welcome_user")}
         a(href=sails.config.sltconfig.url.front.user.profile)
             i #{user.last_name} #{user.first_name}
         .logoutlink

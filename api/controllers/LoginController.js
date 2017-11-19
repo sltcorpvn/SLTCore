@@ -25,7 +25,7 @@ module.exports = {
             if(!user) {
                 return res.json({
                     status: 0,
-                    err: "User is not exist!"
+                    err: res.i18n('invalid_user')
                 });
             }
             req.logIn(user, function(err) {

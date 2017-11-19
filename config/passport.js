@@ -14,13 +14,6 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(user, done) {
-    /*Users.findOne({$and:[
-                        {$or: [{valid_to: null}, {valid_to: {$gte: curDate}}]
-                        },
-                        {username: username}
-                      ]} , function (err, user) {
-        done(err, user);
-    });*/
     done(null, user);
 });
 
@@ -41,13 +34,13 @@ function(username, password, done) {
             return done(null, false, {message: err}); 
         }
         if (!user) {
-            return done(null, false, { message: 'User is not exist!' });
+            return done(null, false, { message: "invalid_usesr" });
         }
 
         bcrypt.compare(password, user.password, function (err, res) {
             if (!res){
                 return done(null, false, {
-                    message: 'Invalid Password!'
+                    message: "invalid_password!"
                 });
             }
 

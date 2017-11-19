@@ -6,8 +6,6 @@
 
 module.exports = {
     getProfile: function(req, res){
-        
-        //res.render("user/profile", {user: user});
-        res.render("user/profile");
+        res.render("user/profile", {user: req.user});
     }
 };
