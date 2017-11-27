@@ -21,3 +21,10 @@ $>node index.js
 
 7. Check whether the website run or not with the url is configured in config/local.js file
 
+HTTP error
+400	Something was wrong in your request. Too few or too many points. ..
+401	Authentication necessary
+413	Too many parameters in the URL, you'll have to use the JSON format and POST requests
+429	API limit reached, you'll also get an email about this, and the header properties will give you more information. See the section about 'HTTP Headers'.
+500	Internal server error. We get automatically a notification and will try to fix this fast.
+501	Only a special list of vehicles is supported
